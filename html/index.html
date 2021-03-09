@@ -1,0 +1,144 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-08 21:21:03
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-08 23:26:04
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>列表</title>
+</head>
+
+<body>
+    <!-- 列表 -->
+    <!-- 无序列表 -->
+    <h4>无序列表</h4>
+    <ul>
+        <li>coffee</li>
+        <li>tea</li>
+        <li>milk</li>
+    </ul>
+    <!-- 有序列表 -->
+    <ol>
+        <li>coffee</li>
+        <li>tea</li>
+    </ol>
+    <!-- 列表end-->
+    <!-- 表格 -->
+    <table border="1">
+        <tr>
+            <th>第一</th>
+            <th>第二</th>
+            <th>第三</th>
+        </tr>
+        <tr>
+            <!-- 第一行 -->
+            <td align="center">a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <!-- 第二行 -->
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <p>111</p>
+    </table>
+    <!--块级元素-新行出现 -->
+    <h1></h1>
+    <p></p>
+    <ul></ul>
+    <table></table>
+    <!-- 内联元素-不换行 -->
+    <b></b>
+    <td></td>
+    <a href=""></a>
+    <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+    </image>
+
+    <!-- 表单form -->
+    <form action="">
+        Username:<input type="text" name="user"><br>
+        Password:<input type="password" name="password">
+        <p>注意：密码为隐藏</p>
+
+        </input>
+    </form>
+    <form action="">
+        Username:<input type="text" name="user"><br>
+        Password:<input type="password" name="password"><br>
+        <input type="radio" name="sex" value="male">male
+        <input type="checkbox" name="sex" value="female">female
+    </form>
+    <form action="html_form.html">
+        <!--提交按钮submit-->
+        Username:<input type="text" name="user"><br>
+        <input type="submit" value="submit">
+    </form>
+    <!-- 下拉列表 -->
+    <form action="">
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab" selected>Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </form>
+
+    <textarea name="" id="" cols="30" rows="10">aaaa</textarea>
+
+    <form action="html_form.html">
+        <input type="button" value="hello world">
+    </form>
+
+    <iframe src="html_form.html" width="200" height="200"></iframe>
+    <iframe src="html_form.html" frameborder="0" width="200" height="200"></iframe>
+
+    <iframe src="html_form.html" name="iframe_a"></iframe>
+    <p><a href="//www.runoob.com" target="iframe_a">RUNOOB.COM</a></p>
+
+    <p><b>注意：</b> 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。</p>
+
+
+    <!-- 脚本 js -->
+    <script>
+        document.write("Hello World!")
+    </script>
+    <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+
+    <p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+
+    <p>
+        JavaScript 能够直接写入 HTML 输出流中：
+    </p>
+    <script>
+        document.write("<h1>这是一个标题</h1>");
+        document.write("<p>这是一个段落。</p>");
+    </script>
+    <p>
+        您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+        如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+    </p>
+
+    <!-- 简单js事件响应 -->
+    <p id="demo">
+        JavaScript 可以触发事件，就像按钮点击。
+        还可以改变样式</p>
+    <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML="hello js";
+        }
+        function Function(){
+            x=document.getElementById("demo")
+            x.style.color="red";
+        }
+    </script>
+    <button type="button" onclick="myFunction()">点我</button>
+    <button type="button" onclick="Function()">点我</button>
+</body>
+
+</html>
