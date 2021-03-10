@@ -1,0 +1,75 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-10 23:35:41
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-11 00:15:04
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        caption {
+            caption-side: top;
+            /* 表格标题位置 */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            align: center;
+            /* 折叠边框 为单一边框 */
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            text-align: c
+        }
+
+        /* 盒子模型
+            1 margin 外边距 除开本身之外的边框 一般为透明
+            2 border 正常边框 围绕在内边距和内容外的边框
+            3 padding 内边距 边框之内 文本之外的距离 一般为透明
+            4 content 内容 盒子的内容 显示文本和图像 */
+        div {
+            background-color: lightgrey;
+            width: 300px;
+            border: 25px solid green;
+            padding: 25px;
+            margin: 25px;
+        }
+
+        /* 轮廓 outline 在边框的外围 可突起元素作用 类似border写法*/
+    </style>
+
+</head>
+
+<body>
+    <table align="center">
+        <caption>Table 1.1 Customers</caption>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+        </tr>
+    </table>
+    <div>
+        这里是盒子内的实际内容。有 25px 内间距，25px 外间距、25px 绿色边框
+    </div>
+</body>
+
+</html>
