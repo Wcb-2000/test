@@ -2,12 +2,13 @@
  * @Author: 吴楚标
  * @Date: 2021-03-09 23:13:23
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-03-09 23:42:49
+ * @LastEditTime: 2021-03-10 23:21:14
  * @Description: 
 -->
 <!-- 优先级 哪个离对象近 哪个先施行 就近原则 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,22 +22,120 @@
             font-size: 50rpx;
 
         } */
+        #s1 {
+            background-color: aquamarine;
+            font-size: 30rpx;
+        }
+
+        .h1 {
+            background-color: bisque;
+            font-size: 50rpx;
+        }
+
+        body {
+            background-image: url('../html/icons/1.jpg');
+            background-repeat: no-repeat;
+            background-position: right top;
+            margin-right: 50px;
+        }
+
+        a {
+            /* 装饰标签 
+                1 去下划线
+                2 上划线 overline
+                3 中划线
+                4 下划线*/
+
+            text-decoration: none;
+            color: black;
+        }
+        
+        /* 文本转换 transform
+                    1 uppercase 全部大写
+                    2 lowercase 全部小写
+                    3 capitalize 单词开头大写  */
+        /* 文本缩进 text-indent
+           指文本第一行的缩进  */
+        
+        /* 字符之间的间距 letter-spacing
+           单词之间的间距 word-spacing */
+
+        /* 禁用文字环绕 即文字不自动换行 white-space:nowrap */
+
+        /* 行高 line-height */
+        /* 字体系列 font-family  */
+        /* 文字对齐图像 vertical-align:text-top/text-bottom */
+        /* 文本阴影 text-shadow */
+        /* 字体样式 font-style:normal（正常字体） italic（倾斜字体）   */
+        /* 字体大小font-size:   1em=16px  em单位可以在浏览器中调整文本大小*/
+        /* 字体粗细 font-weight normal(正常) lighter(加细) bold（加粗）  */
+
+        /* 列表序号可以用自己的图代替  ul{list-style-image} 即可替换 
+                                        list-style-position 列表项标志位置
+                                        list-style-type 列表项标志类型*/
+
+        /* 链接样式 字体背景等   当设置为若干链路状态的样式，也有一些顺序规则：
+                                a:hover 必须跟在 a:link 和 a:visited后面
+                                a:active 必须跟在 a:hover后面
+*/
+        a:link {color:#000000;background-color: blue;}      /* 未访问链接*/
+        a:visited {color:#00FF00;}  /* 已访问链接 */
+        a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
+        a:active {color:#0000FF;}  /* 鼠标点击时 */ 
+        #s5 {
+             text-decoration: overline;
+             text-transform: uppercase;
+             text-indent: 50px;
+             letter-spacing: -5px;
+             line-height: 300%;
+        }
+
+        #s6 {
+            text-decoration: line-through;
+            text-transform: lowercase;
+            word-spacing: 50px;
+            font-style: italic;
+        }
+
+        #s7 {
+            text-decoration: underline;
+            text-transform: capitalize;
+            text-shadow:2px 2px #FF0000;
+        }
+        
     </style>
     <!-- 链接式 -->
     <link rel="stylesheet" href="../css/css1.css">
+    <!-- 选择器 -->
+    <!-- 标签选择器
+         id选择器
+            1 不允许有重复值，唯一
+            2 不能有空格
+            3 不能以数字开头
+            4 以#号开头 
+            
+        类选择器 class
+            1 多个不用标签有相同class属性值
+            2 以.开头
+          -->
+
 </head>
+
 <body>
-    <span style="font-size:50px ;color: #000;"><!--行内式-->
-        你好
+    <span style="font-size:50px ;color: #000;">
+        <!--行内式--> 你好
     </span>
-    <span>
-        你好
-    </span>
-    <span>
-        你好
-    </span>
-    <span>
-        你好
-    </span>
+    <span>你好</span>
+    <span> 你好</span>
+    <span> 你好</span>
+    <p id="s1">今天天气很好</p>
+    <p id="s2">今天天气很好</p>
+    <h1 id="s3" class="h1">j今天天气很坏</h1>
+    <p id="s4">链接：<a href="https://www.runoob.com/css/css-text.html">css学习</a></p>
+    <h1 id="s5">This is heading 1</h1>
+    <h2 id="s6">This is heading 2</h2>
+    <h3 id="s7">This is heading 3</h3>
+    <a href="https://www.runoob.com/try/try.php?filename=trycss_link">这是一个链接</a>
 </body>
+
 </html>
