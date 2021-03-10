@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-03-08 21:21:03
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-03-08 23:26:04
+ * @LastEditTime: 2021-03-09 22:45:41
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -129,16 +129,91 @@
         JavaScript 可以触发事件，就像按钮点击。
         还可以改变样式</p>
     <script>
-        function myFunction(){
-            document.getElementById("demo").innerHTML="hello js";
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "hello js";
         }
-        function Function(){
-            x=document.getElementById("demo")
-            x.style.color="red";
+        function Function() {
+            x = document.getElementById("demo")
+            x.style.color = "red";
         }
     </script>
     <button type="button" onclick="myFunction()">点我</button>
     <button type="button" onclick="Function()">点我</button>
+
+    <!-- html5新元素的使用练习 -->
+    <!-- solid实线 dashed虚线 -->
+    <canvas id="1" width="100" height="200" style="border: 2px dashed #000000;"></canvas>
+    https://www.runoob.com/html/html5-canvas.html
+    <!-- SVG（矢量图形） 是一种使用 XML 描述 2D 图形的语言。
+         Canvas 通过 JavaScript 来绘制 2D 图形。 -->
+    <br>
+    <!-- 数学标记元素 MathML -->https://www.runoob.com/html/html5-mathml.html
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <msup>
+                <mi>b</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>=</mo>
+            <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+            </msup>
+        </mrow>
+    </math>
+
+    <!-- 获取地理位置 -->
+    <p id="demo1">点击获取地理位置，可能需要等待时间</p>
+    <button onclick="getLocation()">点我</button>
+    <script>
+        var x = document.getElementById("demo1");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                x.innerHTML = "该浏览器不支持获取地理位置"
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "纬度： " + position.coords.latitude + "<br>经度: " +
+                position.coords.longitude;
+        }
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "用户拒绝对获取地理位置的请求。"
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "位置信息是不可用的。"
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "请求用户地理位置超时。"
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "未知错误。"
+                    break;
+            }
+        }
+    </script>
+    
+    <!-- HTML5新表单元素 -->
+    <!--  datalist(自动显示涉及选项)\keygen\output-->
+    <form action="">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="aaa"></option>
+            <option value="bbb"></option>
+            <option value="ccc"></option>
+        </datalist>
+    </form>
+
 </body>
 
 </html>
