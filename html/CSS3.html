@@ -1,0 +1,117 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-13 09:53:22
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-13 11:25:04
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- display 元素
+            1 inline （在同一行显示）  可以将列表元素显示为内联元素
+            2 block  （块属性）  可以将对象属性变为块属性  用法将 内联元素转为块元素-->
+    <style>
+        li {
+            display: inline;
+        }
+
+        span {
+            display: block;
+        }
+
+        h2.pos_left {
+            position: relative;
+            left: -20px;
+        }
+
+        h2.pos_right {
+            position: relative;
+            left: 20px;
+        }
+
+        h3 {
+            position: absolute;
+            left: 100px;
+            top: 150px;
+        }
+        .img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            width: 20%;
+        }
+        .p1{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            overflow: scroll;
+        }
+    </style>
+    <!-- position(定位)属性
+            1 static 静态定位 遵循正常的文档流（由上至下 由左至右），不受top、bottom、left、right影响
+            2 fixed 相对浏览器窗口是固定的 不随滚轮滑动
+            3 relative 相对正常的位置进行移动 但是原来位置的空间依旧占据着
+            4 absolute  定位使元素的位置与文档流无关，因此不占据空间。 定位的元素和其他元素重叠。
+                        绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>:
+                        通常与relative配合使用 放在relative的子元素中 并设定相关的top left值
+            5 sticky （粘贴） 随着滚轮滑动 不超出界面 冷冻窗口
+                        元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。
+                    特定阈值指的是 top, right, bottom 或 left 之一，
+                    换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。
+                div.skicty{
+                    position:sticky
+                    top:0     即为向下滑动时 对象可以固定在顶部
+                }-->
+
+    <!-- 重叠元素 z-index 值可为正负 -->
+    
+    <!-- overflow(溢出) 设置宽高后 对溢出内容的处理模式
+            1 scroll 滚动条
+            2 hidden 指定了宽高后  对溢出部分隐藏
+            3 auto 自动调整
+            4 visible 默认值 内容不被裁剪 超出显示
+            5 inherit 继承父类
+            5 设置溢出的方向 overflow-x/overflow-y-->
+
+    <!-- 更改光标 cursor https://www.runoob.com/try/try.php?filename=trycss_cursor-->
+
+    <!-- 浮动 float 对图片的排列
+         清除浮动 clear：both  不影响上下元素布局 https://www.runoob.com/css/css-float.html-->
+</head>
+
+<body>
+    <image class="img" src="../html/icons/1.jpg" mode="widthFix" lazy-load="false" binderror="" bindload="">
+        
+    </image>
+    <p>链接列表inline属性 水平表示：</p>
+    <ul>
+        <li><a href="/html/" target="_blank">HTML</a></li>
+        <li><a href="/css/" target="_blank">CSS</a></li>
+        <li><a href="/js/" target="_blank">JavaScript</a></li>
+        <li><a href="/xml/" target="_blank">XML</a></li>
+    </ul>
+    <h2>Nirvana</h2>
+    <span>Record: MTV Unplugged in New York</span>
+    <span>Year: 1993</span>
+    <h2>Radiohead</h2>
+    <span>Record: OK Computer</span>
+    <span>Year: 1997</span>
+
+    <!-- position：relative -->
+    <h2 class="pos_left">这个标题相对于其正常位置向左移动</h2>
+    <h2 class="pos_right">这个标题相对于其正常位置向右移动</h2>
+
+    <h3>这是一个绝对定位了的标题</h3>
+    
+    <p class="p1">如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+</body>
+
+</html>
