@@ -1,0 +1,74 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-13 17:12:04
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-13 18:00:44
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对齐方式</title>
+    <link rel="stylesheet" href="../css/css6.css">
+</head>
+
+<body>
+    <!-- 块级元素居中 margin: auto即可 -->
+    <div class="certer">aaaaaaa</div>
+
+    <!-- 左右对齐-定位法 position：absolute -->
+    <div class="absolute">asdadasda</div>
+
+    <!-- absolute与 relative 的使用 -->
+    <div class="fu">
+        <div class="zi">
+            sssssss
+        </div>
+    </div>
+
+    <!-- float 对齐 -->
+    <div class="float">sadadsada</div>
+
+    <!-- 图像或文本内容溢出时 在父元素中添加overflow：auto解决 -->
+    <p>以下实例图在父元素中溢出，很不美观:</p>
+
+    <div>
+        <img class="img1" src="../html/icons/1.jpg" alt="Pineapple" width="170" height="170">
+        菜鸟教程 - 学的不仅是技术，更是梦想！！！
+    </div>
+
+    <p style="clear:right">在父元素上通过添加 clearfix 类，并设置 overflow: auto; 来解决该问题:</p>
+
+    <div class="clearfix">
+        <img class="img2" src="../html/icons/1.jpg" alt="Pineapple" width="170" height="170">
+        菜鸟教程 - 学的不仅是技术，更是梦想！！！
+    </div>
+
+    <!-- 水平和垂直居中 配合padding text-align -->
+    <div class="zhong">
+        <p>我是水平和垂直都居中的。</p>
+    </div>
+
+    <!-- 垂直居中的方法1 line-height -->
+    <p>以下实例中，我们让 line-height 属性值和 height 属性值相等来设置 div 元素居中：</p>
+
+    <div class="chuizhi">
+        <p>我是垂直居中的。</p>
+    </div>
+
+    <!-- 垂直居中的方法2 position与transform 的使用 -->
+    <p>以下实例中，我们使用了 positioning 和 transform 属性来设置水平和垂直居中：</p>
+
+    <div class="dierzhong">
+        <p>我是水平和垂直居中的。</p>
+    </div>
+    
+    <!-- margin 水平居中法 -->
+    <div class="margin">margin 水平居中法</div>
+</body>
+
+</html>

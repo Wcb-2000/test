@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-03-10 23:35:41
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-03-11 00:15:04
+ * @LastEditTime: 2021-03-13 10:03:36
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -22,7 +22,6 @@
         table {
             border-collapse: collapse;
             width: 50%;
-            align: center;
             /* 折叠边框 为单一边框 */
         }
 
@@ -47,6 +46,13 @@
         }
 
         /* 轮廓 outline 在边框的外围 可突起元素作用 类似border写法*/
+
+        /* display（显示）    隐藏一个元素 display：none  且不会占用布局空间 
+           visibility （可见性） 隐藏一个元素  visibility：hidden  会占用布局控件 只是元素隐藏
+           在不同浏览器下，对 visibility: collapse 的处理方式不同：
+                1、visibility: collapse 的上述特性仅在 Firefox 下起作用。
+                2、在 IE 即使设置了 visibility: collapse，还是会显示元素。
+                3、在 Chrome 下，即使会将元素隐藏，但无论是否是与 table 相关的元素，visibility: collapse 与 visibility: hidden 没有什么区别，即仍会占用空间。 */
     </style>
 
 </head>
