@@ -1,0 +1,66 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-14 23:04:37
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-14 23:23:46
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css组合选择符</title>
+    <link rel="stylesheet" href="../css/css7.css">
+</head>
+
+<body>
+    <!-- 包含四种组合方式
+            1 后代选择器 以 空格 隔开
+            2 子元素选择器 以 > 隔开
+            3 相邻兄弟选择器 以 + 分隔
+            4 普通兄弟选择器 以 ~ 隔开-->
+
+    <!-- 后代选择器 -->
+    <div>
+        <p>后代选择器</p>
+    </div>
+    <p>不影响</p>
+
+    <!-- 简单粗暴的 子元素选择器 只能选中某子元素 必须有顺序 -->
+    <div class="div1">
+        <h2>My name is Donald</h2>
+        <p>I live in Duckburg.</p>
+    </div>
+
+    <div class="div1">
+        <span>
+            <p>I will not be styled.</p>
+        </span>
+    </div>
+
+    <!-- 相邻兄弟选择器 相同父元素 紧跟元素后的元素将被影响 -->
+    <div class="div2">
+        <h2>DIV 内部标题</h2>
+        <p>DIV 内部段落。</p>
+    </div>
+
+    <p>DIV 之后的第一个 P 元素。</p>
+
+    <p>DIV 之后的第二个 P 元素。</p>
+
+    <!-- 普通兄弟选择器 选取所指定元素后相邻的元素 -->
+    <p>之前段落，不会添加背景颜色。</p>
+    <div class="div3">
+        <p>段落 1。 在 div 中。</p>
+        <p>段落 2。 在 div 中。</p>
+    </div>
+
+    <p>段落 3。不在 div 中。</p>
+    <p>段落 4。不在 div 中。</p>
+
+</body>
+
+</html>

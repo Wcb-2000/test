@@ -1,0 +1,12 @@
+div p{
+    background-color: blue;
+}
+.div1>p{
+    background-color: blueviolet;
+}
+.div2+p{
+    background-color: brown;
+}
+.div3~p{
+    background-color: chartreuse;
+}
