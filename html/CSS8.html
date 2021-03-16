@@ -2,11 +2,12 @@
  * @Author: 吴楚标
  * @Date: 2021-03-15 23:47:38
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-03-16 00:28:43
+ * @LastEditTime: 2021-03-16 10:42:04
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +15,58 @@
     <title>提示工具</title>
     <link rel="stylesheet" href="../css/css8.css">
 </head>
-<body style="text-align: center;">
+
+<body >
     <div class="tooltip">鼠标移到我这
         <span class="tooltiptext">提示文本</span>
     </div>
 
     <div class="img">
-        <img src="../html/icons/1.jpg" alt="">
-        <div class="desc">篮球火</div>
+        <div class="transbox">
+            <!-- <img src="../html/icons/1.jpg" alt=""> -->
+            <p>
+                这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。这些文本在透明框里。
+            </p>
+        </div <div class="desc">篮球火
+    </div>
     </div>
     <!-- 图片廊  https://www.runoob.com/css/css-image-gallery.html-->
+
+    <!-- 属性选择器 [属性]
+         属性+值选择器 [属性=值]
+         属性+值选择器 多值 [属性~=值]
+         属性+值选择器 指定值lang [属性|=值]
+         -->
+
+    <div >
+        <p title="aaaa">aaa</p>
+        <p title="aaaa">bbbb</p>
+    </div>
+    
+    
+    <div >
+        <p title="aaaaa">aaa</p>
+        <p title="aaaa">bbbb</p>
+    </div>
+    
+    <div >
+        <p title="hello world">aaa</p>
+        <p title="student hello">bbbb</p>
+        <p title="student">bbbb</p>
+    </div>
+
+    <div >
+        <p lang="en">aaa</p>
+        <p lang="en-us">bbbb</p>
+        <p lang="us">bbbb</p>
+    </div>
+
+    <form action="" name="input">
+        Firstname:<input type="text" name="fname" value="" size="20">
+        Lastname:<input type="text" name="lname" value="" size="20">
+        <input type="button" value="button">
+        </input>
+    </form>
 </body>
+
 </html>

@@ -22,14 +22,51 @@
 }
 .img{
     margin: 5px;
-    width: 300px;
+    width: 500px;
     height: auto;
+    background: url(../html/icons/1.jpg) repeat;
     border: 1px solid gray;
 
 }
-.img img{
-    width: 100%;
+.img .transbox{
+    width: 400px;
+    height: 180px;
+    margin: 30px 50px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+
+}
+.img .transbox p{
+    margin: 30px 40px;
+    font-weight: bold;
+    color: #000000;
 }
 .img:hover{
     border: 2px solid green;
+}
+[title]{
+    color: blue;
+}
+[title=aaaaa]{
+    color: blueviolet;
+}
+[title~=hello]{
+    color: red;
+}
+[lang|=us]{
+    color: aqua;
+}
+input[type="text"]
+{
+	width:150px;
+	display:block;
+	margin-bottom:10px;
+	background-color:yellow;
+}
+input[type="button"]
+{
+	width:120px;
+	margin-left:35px;
+	display:block;
 }
