@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-03-16 10:46:54
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-03-16 12:21:02
+ * @LastEditTime: 2021-03-16 23:14:54
  * @Description: 
  */
  input[type=text], select {
@@ -14,7 +14,9 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+  input[type=text]:focus{
+    background-color: aquamarine;
+  }
   input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
