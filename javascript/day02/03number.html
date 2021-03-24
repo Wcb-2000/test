@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-24 16:56:39
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-24 17:19:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        js中所以的数值但是number类型
+        包括整数和浮点数（小数）
+
+        js可以表示数字的最大值
+        Number.MAX_VALUE  1.7976931348623157e+308
+        最小值
+        Number.MIN_VALUE 5e-324
+        如果表示的数字超过最大值  则表示infinity 无穷
+        typeof  检查infinity 也显示number
+
+        NAN 是特殊数字  表示 not a number 
+            typeof 检查NAN 也表示number
+        */
+       //数字
+        var a= 123;
+        //字符串
+        var b= "123";
+        // console.log(a,b);
+        /*
+         typeof可以判断变量类型  检查时自动返回对呀的数据类型
+        */
+       var c = "abc" * "abc";
+
+       /*
+        js整数相加基本正确
+        浮点数增加 不精确  不使用精度要求高的运算
+       */
+       var d = 125 + 524;
+       var e =  0.01+0.3;
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log( c)
+        console.log(d)
+        console.log(e)
+        console.log(Number.MAX_VALUE)
+        console.log(Number.MIN_VALUE)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
