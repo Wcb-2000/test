@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-23 11:18:51
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-23 11:34:30
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引用外部js文件 通过script标签
+        写到外部文件可以在不同的页面中同时引用，也可以利用浏览器缓存机制
+        推荐使用 -->
+        
+    <!-- script标签引入一旦引入外部文件，就不能进行编写，编写了浏览器也忽略
+        如果需要需要再次创建一个新的script标签 -->
+    <script type="text/javascript" src="../day01/02.js">
+        
+    //   alert('点我干哈');
+    </script>
+      <script >
+        
+           alert('我是内部');
+        </script>
+   
+</head>
+<body>
+    <!-- js可以编写到标签onclick属性中
+            当点击按钮时才执行 
+        
+        虽然可以写在标签中，但是属于结构行为耦合，不方便维护，不推荐-->
+    <button onclick="alert('点我干哈');">点我一下</button>
+
+    <!-- js可以编写到超链接href中 -->
+    <a href="javascript:alert('点啥');">点我一下</a>
+    <a href="javascript:;">点我一下</a>
+</body>
+</html>
