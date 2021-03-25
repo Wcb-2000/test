@@ -1,0 +1,70 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-24 23:21:13
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-25 00:00:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         将其他数据类型转换为number
+            方式一：
+                使用Number()函数  类似String()
+                  -字符串-->数字
+                    -如果为字符串为纯数字 则正常转换
+                    -如果有其他字符 例如字母 则为NaN not a number
+                    -如果字符串为空 则转为0
+
+                  -布尔 -- >数字
+                   true 转为 1 
+                   false 转为 0 
+
+                  -null --> 0
+
+                  -undefined --> NaN 
+                  
+            方式二：
+                专门对付字符串，只识别数字
+                -parseInt() 把字符串转换为整数，将有效整数取出转换
+                -parseFloat() 作用和上面类似，但此可以处理小数，有效的小数
+                
+                -如果对非String 使用上面两个，会先转换为String，再操作
+        */
+       var a = "123";
+       a=Number(a);
+       console.log(typeof a)
+       console.log(a)
+
+       var b = "abc";
+       b=Number(b);
+       console.log(typeof b)
+       console.log(b)
+
+       var c = true;
+       c = Number(c)
+       console.log(c)
+       console.log(typeof c)
+
+       var d = "123px"
+       d = parseInt(d)
+       console.log(d)
+       console.log(typeof d)
+
+       var e = "123.111px"
+       e = parseFloat(e)
+       console.log(e)
+       console.log(typeof e)
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
