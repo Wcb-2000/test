@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-26 11:34:10
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-26 11:39:49
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        一元运算符，只需要一个操作数
+        + 正号   不会对数值产生任何影响
+        - 负号   取反
+
+        对于非Number类型，先转换为number 在运算
+        在前面加一个+  即可转为number
+        */
+       
+        var a;
+        a= 123;
+        a = +a; //123
+        a = -a; //-123
+        a = true;
+        a = -a;         //-1
+        a = "18";
+        a = +a ;   //18  number  
+        
+        a = 1 + +"2" + 1;
+        
+        console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

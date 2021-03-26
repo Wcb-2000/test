@@ -1,0 +1,84 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-26 11:02:45
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-26 11:33:54
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        运算也叫操作符
+        通运算符可以对一个或多个值进行运算
+        比如：typeof就是运算符，可以来获得一个值的类型
+                他将该值的类型以字符串的形式返回
+                number string boolean undefined object
+           
+        算术运算符： + - * / %
+            1.当对非number进行相加时，会将这些值转换为number
+            2.任何值和NaN相加 都为NaN
+            3.字符串相加，拼接
+            4.任何值和字符串相加，会先转换为字符串拼接
+
+            1.减号相减会先转为number
+        */
+       var a =123;
+       var result = typeof a;
+       result = a+ 1;
+       result = true + 1;
+       result = true + false;
+       result = null + 2;
+       result = 2 + NaN;
+       result = "123"+"456";
+       
+       result = 123 + "1";
+       result = true + "1";
+
+    //    .任何值和字符串相加，会先转换为字符串拼接
+    //      利用这一特性，只需为任意数据类型+一个"",即可转换为字符串
+    //      这是一种隐式类型转换，有浏览器自动完成，实际调用String（）
+    result = 123 +"";
+       console.log("result= "+result);
+       console.log(typeof result);
+
+       var b;
+       b = 1 + 2 +"3"; //33
+       b = "1"+2+3;     //123
+       
+       b = 100 -5;
+       b = 100 - true;  //99
+       b = 100 - "1";  //99
+       console.log("b = " +b)
+
+       var c ;
+       c = 2*"8";
+       c = 2* undefined;  //NaN
+       C = 2 * null;    //NaN
+       console.log("c= " +c)
+
+    //    任何值 - * / 运算时，都会自动转换为number
+    //利用这一特性，只需为任意数据类型-0 *1 /1一个,即可转换为number
+    //      这是一种隐式类型转换，原理和number()一样
+    var d;
+    d=123;
+    d = d - 0;
+    console.log(d);
+
+    //%
+    var e;
+    e = 2;
+    e = 2 %1;
+    console.log(e);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

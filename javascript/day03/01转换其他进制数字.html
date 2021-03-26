@@ -1,0 +1,41 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-26 10:21:14
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-26 10:46:42
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    // <!-- js中  表示16进制  0x开头
+    //         表示8进制  0开头     输出均为10进制 -->
+    var a;
+
+    //16进制
+    a = 0x10;
+    a = 0xff;
+    a = 0xaaaa;
+
+    //8进制
+    a = 070
+
+    //2进制
+    // a=0b10
+
+    //像“070”这种数字，有些浏览器会解析为8进制或10进制，不统一，可用以下方法parseInt(a,进制)
+    a = "070";
+    a=parseInt(a,10);
+    console.log(a);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
