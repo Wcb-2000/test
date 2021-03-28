@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-27 13:24:14
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-27 13:57:27
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+    js有三种逻辑运算符： 
+        ！非
+            1.对值非运算
+            2.布尔值 取反操作  true——》false  false-》true
+            3.对非布尔值  先转换布尔值，再取反，可利用该特点将其他数据类型转布尔值 两次取反
+            
+        &&与  
+            1.对两边的值进行与运算
+            2.只有两边为true 返回值才为true
+            3.第一个值为true  会检查第二个值，第一个值为false 不检查第二个
+
+        ||或
+            1.对两边的值进行与运算
+            2.只有两边为false，返回值才为false
+            3.第一个值为true 直接返回结果，第一个值为false才会检查第二个值
+        */
+        var result = true && false;
+        console.log(result);
+
+        var a = true;
+        a = !a;
+        console.log("a = "+a);
+
+        var b = "hello";
+        b = !!b;
+        console.log(b);
+
+        // false && alert("aaa");
+        true && alert("aaa");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
