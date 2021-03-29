@@ -1,0 +1,46 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-28 16:56:29
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-28 17:06:38
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        条件运算符  ：  三元运算符  
+                        条件表达式?语句1:语句2
+            -执行过程：
+                如果该值为true，执行语句1
+                如果该值为false，执行语句2
+
+                如果求值对象为非布尔值，先转换再运算
+        */
+    //    true?alert("aaa"):alert("sss");
+    var a=10;
+    var b =20;
+    var c = 30;
+    // a > b ?alert("a大"):alert("b大");
+    
+    // 获取a和b中的最大值
+    var max = a> b?a:b;
+
+    //获取 abc中的最大值
+    // max = max >c ? max:c;
+
+    // 这种写法不推荐，不方便阅读
+    //  max = a > b ? (a>c?a:c):(b>c?b:c); 
+    console.log(max);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

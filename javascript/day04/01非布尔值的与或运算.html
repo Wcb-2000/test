@@ -1,0 +1,55 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-28 10:21:13
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-28 10:32:24
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        && || 非布尔值的情况
+          -对于非布尔值进行与或运算时，
+          -会先将其转换为布尔值，然后再运算，并且返回原值
+          
+          与运算
+            -如果第一个值为true，必返回第二个值
+            -如果第一个值为false，直接返回第一个值
+        */
+
+        //true && true
+        //与运算：如果两个值都为true，则返回后面那个
+        var a = 1 && 2 ;  //2
+        var a = 2 && 1 ; //1
+        
+        //如果两个值中有false  则返回靠前的false
+        // false && ture
+        a = 0&& 2;
+        
+        //false && false
+        a = NaN && 0;
+        a = 0 && NaN ;
+
+        // true || true
+        //如果第一个值为true ，则直接返回第一个值
+        a = 1||2;
+        a = 1||0;
+        a = 1||NaN;
+
+        //如果第一个值为false，则返回第二个值
+        a = 0 || 1;
+        a = 0|| NaN;
+
+        console.log("a = ",a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

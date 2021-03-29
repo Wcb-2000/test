@@ -1,0 +1,44 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-28 10:37:52
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-28 10:45:28
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        通过关系运算符比较两个值的大小关系
+        如果关系成立返回true，如果不成立返回false
+
+        > 大于号
+            -判断左侧是否大于右边，不成立返回false
+        
+        <
+
+        >=
+
+        <=
+
+        非数字类型，先转换为数字，再比大小
+        如果两侧都为字符串，不会将其转换为数字，而是比unicode字符编码
+
+        比较两个字符串类型的数字，可能有不可预期的结果
+        在比较两个字符串类型的数字时，一定一定要转型
+        */
+       var b = "11122221"< +"2222";  //+转型
+       var a = 4>5;
+       console.log(a);
+       console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

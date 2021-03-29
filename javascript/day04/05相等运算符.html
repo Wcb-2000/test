@@ -1,0 +1,53 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-28 11:01:17
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-28 11:17:49
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        相等运算符比较两个值是否相等
+        如果相等返回 true  否则返回false
+
+        == 作运算
+
+        !=  会对变量进行类型转换
+
+        ===  如果类型不同直接返回false
+        !==   不全等 也为false
+        */
+       var  a =10;
+       console.log(a == 2);
+       
+       //类型不通自动类型转换，再比较
+       a = "1";
+       console.log(a == 1);
+       
+       console.log(true == "1"); //true
+
+       console.log(null == 0); //false
+
+       //undefined 衍生自null  这两值作判断 会返回true
+       console.log( undefined == null);
+
+       //NaN  不和任何值相等 包括他本身
+
+       console.log(NaN == NaN);
+
+       //isNaN()函数 判断一个值是否为NaN
+       var b ;
+       console.log(isNaN(b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
