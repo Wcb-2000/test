@@ -1,0 +1,80 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-30 21:58:54
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-30 22:27:56
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            向页面中输出连续的数字
+            
+            循环语句：
+                通过循环语句反复的执行一段代码多次
+
+            while循环
+                -语法：
+                    while(条件表达式){
+                        语句
+                    }
+                    
+                -执行过程：
+                    先对条件表达式判断，
+                        若为true  执行循环体
+                        完毕后 继续判断表达式  true 再执行
+
+                        若为false 终止循环
+
+            do....while循环
+                    -语法：
+                        do{
+                            
+                        }while(条件表达式)
+                        
+                    -执行过程：
+                     先执行一遍循环体do   再对while表达式判断 
+                        如果为true  继续执行  
+                        如果为法拉瑟  终止
+                        
+            实际上这两个类似，  不同是 while 先判断后执行   do...while  先执行后判断
+            do...while  保证循环体至少循环一次
+            while  不能保证
+        */
+
+        var a = 1;
+        while (0 < a) {
+            document.write(a++)
+            //判断a是否为5
+            if (a == 5) {
+                //退出循环
+                break;
+            }
+        }
+
+        //创建循环三个步骤
+        //1.初始化变量
+        var i =0;
+
+        //2.在循环中设置表达式
+        while(i<10){
+            document.write(i);
+            //3.定义一个更新表达式
+            i++;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
