@@ -1,0 +1,40 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-30 11:06:45
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-30 11:14:07
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score = prompt("把你的成绩报上来！（0-100）")
+        if (score > 100 || score < 0 ||isNaN(score)) {
+            alert("玩呢");
+        } else {
+            if (score == 100) {
+                alert("宝马");
+            } else if (score >= 80) {
+                alert("手机");
+            } else if (score >= 60) {
+                alert("参考书");
+            } else {
+                alert("棍子")
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
