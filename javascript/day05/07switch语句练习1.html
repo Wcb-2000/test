@@ -1,0 +1,63 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-30 20:02:26
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-30 20:23:16
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 成绩大于60 输出及格  小于60  输出不及格
+        var a;
+        a = prompt("请输入成绩（0-100）：")
+        switch (parseInt(a / 10)) {
+            case 10:
+            case 9:
+            case 8:
+            case 7:
+            case 6:
+                alert("合格");
+                break;
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                alert("不合格");
+                break;
+            default:
+                alert("非法字符");
+                break;
+
+        }
+
+
+        var b;
+        b = prompt("请输入成绩（0-100）：")
+        switch (true) {
+            case 100 >= b >= 60:
+                alert("合格");
+                break;
+            case 0 <= b < 60:
+                alert("不合格");
+                break;
+            default:
+                alert("非法字符");
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
