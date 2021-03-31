@@ -1,0 +1,52 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-31 22:35:00
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-31 23:04:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        嵌套的for循环
+        */
+
+        //通过for循环输出图像
+        //可控制高度
+        for(var i=0;i<5;i++){
+            //循环内部再创建一个循环，控制图像宽度
+            //外部for循环执行一次，内部执行5次
+
+            //内层循环决定图像的宽度，执行几次宽度就为多少
+            for(var j=0;j<i+1;j++){
+                document.write("*&nbsp;&nbsp")
+            }
+            //换行
+            document.write("<br />")
+            
+        }
+        for(var i=0;i<5;i++){
+            //循环内部再创建一个循环，控制图像宽度
+            //外部for循环执行一次，内部执行5次
+
+            //内层循环决定图像的宽度，执行几次宽度就为多少
+            for(var j=0;j<5-i;j++){
+                document.write("*&nbsp;&nbsp")
+            }
+            //换行
+            document.write("<br />")
+            
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
