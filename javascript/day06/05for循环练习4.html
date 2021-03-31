@@ -1,0 +1,72 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-03-31 16:31:02
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-03-31 16:55:18
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        在页面接收数字，并判断该数是否为质数
+        质数：只能被1和自身整除的数，1不是质数也不是合数，质数必须是大于1的自然数。
+        */
+
+
+        //方法一
+        //定义输入的数字
+        var i;
+        //计数器
+        var count = 0;
+        //获取数字
+        i = prompt("请输入一个数:")
+        //打印可被除数
+        for (var k = i; k >= 1; k--) {
+            //判断是否被整除
+            if (i % k == 0) {
+                //输出可以除的数
+                console.log(k);
+                //计算被除次数
+                count++;
+            }
+        }
+        //判断是否只被除两次，如果是说明只有他自身和1
+        if (count == 2) {
+            alert("数字：" + i + "为质数");
+        } else {
+            alert("数字：" + i + "不为质数");
+        }
+
+        //方法二
+        //定义参数num，保存数值
+        var num;
+        num = prompt("请输入一个数:");
+        //默认为质数
+        var flag = true;
+        //区间是关键，大于1 小于num
+        for (var i = 2; i < num; i++) {
+            //如果能被整除，说明不是质数
+            if (num % i == 0) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            alert("数字：" + i + "为质数");
+        } else {
+            alert("数字：" + i + "不为质数");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
