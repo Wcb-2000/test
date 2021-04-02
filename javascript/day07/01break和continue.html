@@ -1,0 +1,63 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-02 10:50:57
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-02 11:07:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        break关键字可以用来退出 switch或循环语句
+          不能在if语句中使用break和continue，break可以和for和if嵌套
+            -break会立即终止离他最近的循环
+        */
+
+        // for(var i=0;i<5;i++){
+        //     console.log("外层循环："+i);
+        //     for(var j=0;j<5;j++){
+        //         break;
+        //         console.log("内层循环："+j);
+        //     }
+        // }
+
+
+            /*
+            可以为循环语句创建label，来标识当前的循环
+            label：循环语句
+            使用break语句时，可以在break后跟着一个label，
+                这样break将会结束指定的循环，而不是最近的
+            */
+            
+        outer:
+        for(var i=0;i<5;i++){
+            console.log("外层循环："+i);
+            for(var j=0;j<5;j++){
+                break outer;
+                console.log("内层循环："+j);
+            }
+        }
+
+        /*
+        continue关键字 可以跳过当次循环
+            只对最近的循环产生影响
+            -
+        */
+        for(var i=0;i<5;i++){
+            if(i==2){
+                continue;
+            }
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
