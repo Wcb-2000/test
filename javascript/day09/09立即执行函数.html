@@ -1,0 +1,36 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-11 16:42:27
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-11 16:48:37
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //立即执行函数
+
+        
+        //只执行一次匿名函数
+        //正常调用  函数名()   类似
+        (function(){
+            alert("匿名函数");
+        })();
+
+
+        //此方法不仅可以立即执行 还可以赋值
+        (function(a,b){
+            console.log("a= "+a);
+            console.log("b= "+b);
+        })(123,123);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
