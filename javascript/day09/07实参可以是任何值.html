@@ -1,0 +1,64 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-11 13:42:47
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-11 14:03:30
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function area(r){
+            var b = 3.14*r*r;
+            return b;
+        }
+        /*
+        创建一个函数，可以在控制台输出一个人的信息
+        可以输出 name age gender address
+
+        实参可以是任意的数据类型 也可以是对象
+        当我们参数过多时，可以将参数封装到一个对象中，然后通过对象传递
+        */
+       function a(o){
+           console.log("我是"+o.name+"，今年我"+o.age+"岁了，"+"我是一个的"+o.gender+"，我住在"+o.address+"。")
+       }
+       var obj={
+           name:"孙悟空",
+           age:18,
+           gender:"男",
+           address:"花果山"
+       }
+       a(obj);
+       console.log(a);
+
+       /*
+       实参可以是一个对象，也可以是一个函数
+       */
+      function fun(a){
+        //   a(obj);      //把对象obj 带入a函数
+        console.log(a);
+      }
+      fun(a);  //调用a函数
+
+
+    //   fun(area)  返回 area函数
+      fun(area(10))   //返回area函数 r=10的结果
+      /*
+      area()
+        -调用函数
+        -相当于使用的函数的返回值
+      area
+        -函数对象
+        -相当于直接使用函数对象
+      */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

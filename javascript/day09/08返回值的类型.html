@@ -1,0 +1,68 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-11 16:20:20
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-11 16:41:49
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun() {
+            alert("函数执行开始")
+            for (var i = 0; i < 5; i++) {
+                if (i == 2) {
+                    //使用break 跳出当前循环
+                    // break;
+
+                    //continue 用于跳过当次循环
+                    //continue
+
+                    //return可以结束整个函数
+                    return;
+                }
+                console.log(i)
+            }
+            alert("函数执行结束")
+        }
+        // fun();
+
+
+        /*
+        返回值可以是任意类型
+            可以是对象，也可以是函数
+        */
+        function fun2() {
+            //    return true;
+            // return "aaa";
+            // var obj = {name:"孙悟空"};
+            return { name: "孙悟空" };
+        }
+        var a = fun2();
+        //    console.log(a.name);
+
+        function fun3() {
+            //函数内再声明一个函数
+            function fun4() {
+                alert("我是fun4");
+            }
+           return fun4;
+        }
+        a = fun3(); 
+        // console.log(a);
+        a();     //和下面一样
+        fun3()();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
