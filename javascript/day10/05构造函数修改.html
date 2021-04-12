@@ -1,0 +1,46 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-12 23:39:40
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-12 23:57:42
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        创建一个person构造函数
+            - 在 Person构造函数中，为每一个对象都添加一个sayName方法
+            -目前的方法是在构造函数中内部创造的
+                也就是每执行一次构造函数，就会新增一个sayName方法
+                这样相当于执行10000次，就有10000个方法，而都一样，同一个功能
+                这是完全没必要的，完全可以使所有对象共享同一个方法
+        */
+       function Person(name,age,gender){
+           this.name=name;
+           this.age=age;
+           this.gender=gender;
+           //向对象中添加方法
+           this.sayName=fun;
+           
+       }
+
+       //将sayName方法在全局作用域中定义
+       function fun(){
+        alert("hello，i am "+this.name);
+       }
+       
+       //创建一个Person的实力
+       var per = new Person("孙悟空",18,"男")
+       per.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
