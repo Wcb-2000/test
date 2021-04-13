@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-13 22:49:12
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-13 23:01:08
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        垃圾回收（GC）
+            -程序运行过程中产生的垃圾
+            -过多堆积会影响运行速度
+            -因此建立回收机制，处理产生的垃圾
+
+        当一个对象没有任何的变量或属性对它进行引用，此时我们将永远无法操作该对象
+            此时这种对象就是一个垃圾，占用内存
+
+        在js只拥有自动回收垃圾机制，自动销毁垃圾对象
+            我们不需要进行操作
+
+        我们只需要将不再使用的对象 设置为null即可
+        */
+       var obj = new Object();
+
+       //对对象进行操作
+       obj= null;   //断开引用，对象没有任何东西
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
