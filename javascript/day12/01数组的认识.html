@@ -1,0 +1,96 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-14 16:11:56
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-14 16:40:20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        内建对象
+        宿主对象
+        自定义对象
+
+        数组(Array)
+            -数组也是一个对象
+            -它和普通对象功能类似，也是存储数据
+            -不同的是普通对象是使用字符串作为属性名，
+                而数组是使用数字来作为索引操作元素
+            
+            -索引(index)：
+                从0开始的整数就是索引
+            -数组的存储性能比普通对象好，在开发中经常使用来存储
+        */
+
+        //创建数组对象
+        var arr = new Array();
+
+        //typeof  检查数组返回object
+        console.log(typeof arr);
+
+        //向数组中添加元素
+        //语法： 数组[索引] = 指
+
+        arr[0] = 10;
+        arr[1] = 11;
+        // arr[10] = 11;
+        // console.log(arr);
+
+        //读取数组中的元素
+        //语法：数组[索引]
+
+        console.log(arr[0]);
+        console.log(arr[1]);
+        //数组索引不存在，返回undefined
+        console.log(arr[2]);
+
+        /*
+        获取数组的长度
+            length属性来获取数组长度（元素的个数）
+            语法： 数组.length
+
+        对于连续的数组，使用length可以获取数组的长度（元素的个数）
+        对于非连续的数组，使用length会获取到数组的最大索引+1
+            尽量不要写非连续的数组
+        
+        */
+       console.log(arr.length);
+       console.log(arr);
+
+       /*
+       修改length
+        如果修改的length长度大于原长度，，则多出部分会空出来
+        如果修改的长度小于原长度，则多出元素会被删除
+       */
+    //   arr.length=10;
+    //   console.log(arr.length);
+    //   console.log(arr);
+        
+      //修改后
+    //   arr.length=1;
+    //   console.log(arr.length);
+    //   console.log(arr);
+        
+      //向数组的末位置添加元素
+      //语法：数组[数组.length] = 值
+      arr[arr.length]=20;
+      arr[arr.length]=30;
+      arr[arr.length]=40;
+      console.log(arr);
+      
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
