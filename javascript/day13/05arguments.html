@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-15 21:00:57
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-16 10:31:57
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css导入形式
+    1.链接式    <link rel="stylesheet" href="css文件路径">
+    2.导入式        <style>@import url("css文件路径");</style>
+    -->
+
+    <script>
+        /*
+        调用函数时，浏览器每次都会传递两个隐含的参数
+            1。上下文对象，this
+            2。 封装实参的对象 arguments
+                -arguments 是一个类数组对象，它也可以通过索引操作数据，也可以获取长度
+                -在调用函数时，我们所传递的实参都会在arguments中保存
+                -arguments.length 可以获取实参的长度
+                -即使不定义形参，也可以通过arguments来使用实参
+                    只不过比较麻烦
+                        arguments[0] 表示第一个实参
+                        arguments[1] 表示第二个实参
+
+                -里面还有一个属性 callee.
+                    这个属性对应一个函数对象，就是当前正在指向的函数的对象
+                
+        */
+       function fun(){
+        //    console.log(arguments instanceof Array); //检查是否属于数组，不属于数组
+        console.log(Array.isArray(arguments));  //另外一种检查方式
+        console.log(arguments.length);
+        console.log(arguments[0]);
+        console.log(arguments.callee );       
+        console.log(arguments.callee == fun);       //返回true
+       }
+       fun("hello",true);   //返回2
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
