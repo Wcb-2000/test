@@ -1,0 +1,102 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-15 11:34:34
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-15 19:53:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //创建一个数组
+        var arr = ["孙悟空", "沙和尚", "猪八戒"];
+        var arr2 = ["白骨精", "牛魔王", "红孩儿"];
+        var arr3 = ["二郎神", "金角", "银角"];
+
+        /**
+         *  concat()可以链接两个或多个数组，并将新的数组返回
+         *      -该方法不会对原数组产生影响 
+         */
+        var result = arr.concat(arr2,arr3,"铁扇公主");
+        console.log(result);
+
+        /*
+        join()
+            -该方法可以将数组转换为一个字符串
+            -不会对原数组产生影响，而是将转换后的字符串作为结果返回
+            -在join()中可以指定一个字符串作为参数，这个字符串将成为数组中元素的连接符
+                如果不指定连接符，默认,作为连接符
+
+        */
+        var arr = ["孙悟空", "沙和尚", "猪八戒"];
+        result = arr.join("--");  //指定--作为连接符，默认为，
+        console.log(result);
+        console.log(typeof result);  //string类型
+
+        /*
+        reverse()
+            -反转数组，前面去后面，后面去前面
+            -直接修改原数组
+        */
+        var arr = ["孙悟空", "沙和尚", "猪八戒"];
+        arr.reverse();
+        console.log(arr);
+
+
+        /*
+        sort()
+            -可以用来对数组中的元素进行排序
+            -直接影响原数组，默认按照Unicode编码进行排序
+        */
+       arr = ["a","c","b","e","d"];
+       arr.sort();
+    //    arr.reverse();//反转
+       
+    /*
+    即使对于纯数字的数组，使用sort()排序时，也会按照unicode编码排序
+        可能有错误的结果
+
+        我们可以自己指定排序规则
+            我们可以在sort()中添加一个回调函数，来指定排序规则
+                回调函数中需要当以两个形参
+                浏览器将会分别使用数组中的元素作为实参去调用回调函数
+                使用哪个元素调用不确定，那肯定的是数组中a一定在b的前面
+        
+        -浏览器会根据回调函数的返回值来决定元素的顺序
+            如果返回值大于0，则元素交换位置
+            如果返回值小于0，则元素位置不变
+            如果返回值等于0，则认为俩元素相等，也不变位置
+    */
+        arr= [2,3,5,4,8,11,12];  //输出错误   
+        arr.sort(function(a,b){
+            // console.log("a="+a);
+            // console.log("b="+b);
+            
+            // if(a>b){
+            //     return 1;
+            // }else if(a<b){
+            //     return -1;
+            // }else{
+            //     return 0;
+            // }
+
+            //升序
+            // return a-b;
+
+            //降序
+            return b -a ;
+        });         
+        console.log(arr);
+    
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
