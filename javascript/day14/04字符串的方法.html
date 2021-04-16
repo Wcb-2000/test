@@ -1,0 +1,166 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-16 20:43:20
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-16 21:39:48
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //创建一个字符串
+        var str = "hello";
+
+        /*
+        在底层以数组的形式存在
+        ["h","e","l","l","o"]
+        */
+        console.log(str.length);
+        console.log(str[2]);
+
+        /*
+        length属性
+         -获取字符串长度
+        */
+
+        /*
+        charAt()
+         -可获取指定位置的字符
+         -根据索引获取指定的字符
+        */
+        str = "hello";
+        var result = str.charAt(0);
+        //   var result = str[0];   
+        console.log(result);
+
+        /*
+        charCodeAt()
+          -返回的是unicode编码
+        */
+        str = "hello";
+        result = str.charCodeAt(0);
+        console.log(result);
+
+        /*
+        构造函数String
+  
+        String.formCharCode()
+          -可以根据字符编码去获取字符
+        */
+        result = String.fromCharCode(72);
+        console.log(result);
+
+        /*
+        concat()   
+           -连接两个或多个字符串
+           -作用和+一样
+        */
+        result = str.concat("aaa", "bbb");
+        console.log(result)
+
+        /*
+        indexof()
+            -该方法可以检索一个字符串中是否含有指定内容
+            -如果字符串中含有该内容，则会返回其第一次出现的索引
+                如果没有找到指定内容，则返回-1
+            -可以指定第二个参数，指定开始查找的位置
+            
+    
+        lastindexOf()
+            -该方法和indexOf()一样
+            -不同的是此方法是从后往前找，
+            -也可以指定第二个参数
+        */
+        str = "helloe";
+
+        result = str.indexOf("e", 1);
+        // result = str.indexOf("s");    -1
+        console.log(result);
+
+        result = str.lastIndexOf("e", 4);
+        console.log(result);
+
+        /*
+        slice()
+            -可以截取指定内容
+            -不影响原字符串,需重新定义一个变量
+            -参数
+                1.第一个，开始位置的索引（包括开始位置）
+                2.第二个，结束位置的索引（不包括结束位置）
+                    第二个参数如果省略，则截取到后面所有的
+                也可以传递负数作为参数，负数的话将会从后面计算
+        */
+        str = "asdasdfsd";
+        result = str.slice(1, 5);
+        console.log(result);
+        result = str.slice(1);
+        console.log(result);
+        result = str.slice(1, -1);
+        console.log(result);
+
+
+        /*
+             subString()
+                 -可以用来截取字符串，和slice()类似
+                 -参数
+                    1.第一个，开始位置的索引（包括开始位置）
+                    2.第二个，结束位置的索引（不包括结束位置）
+                        -不同的是不能接受负值，如果传递负值，默认为0
+                        -如果第二个参数小于第一个，自动交换位置
+        */
+        result = str.substring(1, 3);
+        console.log(result);
+
+        /*
+        substr()
+            -可以用来截取字符串
+            -参数：
+                1.第一个参数，开始截取位置的索引
+                2.第二个参数，截取的长度
+            对原数组不影响
+        */
+       str = "adafeed";
+       result = str.substr(3,2);
+       console.log(result);
+
+       /*
+       split()
+            -可以将字符串拆分为一个数组
+            参数：
+                -需要一个字符串作为参数，将会根据该字符串去拆分数组
+
+            如果传递一个空串，则每个都拆分为数组
+       */
+      str = "asd,dgs,asf,eg";
+      result = str.split(",");  //指定什么作为分隔符，也可以是其他  尝试用d或者其他试试 
+      console.log(result);
+      console.log(result[1]);
+      console.log(Array.isArray(result));
+
+      result= str.split("");
+      console.log(result);
+
+        //toUpperCase()
+      //将字符串转换为大写并返回
+      str = "afeggdss";
+      result = str.toUpperCase();
+      console.log(result);
+
+      //toLowerCase()
+      //将字符串转换为小写并返回，和上者都不影响原来字符串
+      result = str.toLowerCase();
+      console.log(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
