@@ -1,0 +1,74 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-17 15:37:36
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-17 16:09:51
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "1a2sf3dsg535asa3f";
+        /*
+        splict()
+            -可以将一个字符串拆分为一个数组
+            -方法中可以传递一个正则表达式作为参数，这样方法会根据正则表达式拆分字符串
+
+            -此方法即使不指定全局匹配g 也都拆分
+        */
+
+       var result = str.split("s");
+       
+       //根据任意字母拆分
+        var result = str.split(/[A-z]/);
+        console.log(result);
+
+        /*
+        search()
+            -可以搜索字符串中是否含有指定内容
+            -如果搜索到指定内容，则返回第一次出现的索引，如果没有搜索到返回 -1
+            -它可以接收一个正则表达式作为参数，然后根据正则表达式去检索字符串
+
+            -不能全局匹配  ，设置全局匹配也没用，只会返回第一个
+        */
+
+       str = "abc adc hello aec";
+       result = str.search(/a[bde]c/);
+       console.log(result);
+       
+       /*
+       match()
+            -可以根据正则表达式，从一个字符串中将符合条件的内容提取出来
+            -默认情况下我们的match只会找到第一个符合要求的内容，找到以后就停止检索
+                我们可以设置正则表达式为全局匹配模式，这样就会匹配到所有内容
+                可以为正则表达式设置多个匹配模式且顺序无所谓  ig  gi 全局且忽略大小写
+
+            -匹配的内容将封装到一个数组中返回，即使只查询到一个结果 
+       */
+      str = "1a1d2d4aas5g6r8s";
+      result = str.match(/[A-z]/g);  //全局模式
+      console.log(result);
+      
+      /*
+      replace()
+        -可以将字符串中指定内容替换为新的内容
+        -两个参数：
+            1.被替换的内容
+            2.新的内容
+        -默认只替换一个
+        -使用正则表达式替换
+        -也可以删除指定内容，替换为空""
+      */
+     result = str.replace(/a/g,"@");
+     console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
