@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-17 22:33:38
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-17 22:51:50
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 浏览器在加载页面时，是按照自上而下的顺序加载的，
+            读取一行加载一行 
+        如果将script写在head中  代码执行时，页面还没加载，会报错，不能正常获取
+
+        在代码执行时，页面还没有加载，页面没有加载DOM对象也没有加载
+            会导致无法获取到DOM对象
+        -->
+        
+    <!-- 
+    onload事件 会在整个界面加载完成后再触发
+    为window绑定onload事件
+        该事件对应的相应函数会在页面加载完成之后执行
+            这样可以确保我们的代码在执行时所有的DOM对象全部加载完毕
+    -->
+    <script>
+        window.onload = function () {
+            //获取id为btn的按钮
+            var btn = document.getElementById("btn");
+            //为按钮绑定一个单机相应事件
+            btn.onclick = function () {
+                alert("aaaa");
+            };
+        }
+    </script>
+</head>
+
+<body>
+
+    <button id="btn">点我一下</button>
+
+    <script>
+        //将js代码编写到页面的下部就是为了可以在页面加载完毕后再执行js代码
+
+        //获取id为btn的按钮
+        // var btn = document.getElementById("btn");
+        // //为按钮绑定一个单机相应事件
+        // btn.onclick = function () {
+        //     alert("aaaa");
+        // };
+    </script>
+</body>
+
+</html>
