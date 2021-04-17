@@ -1,0 +1,31 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-17 18:10:26
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-17 18:35:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">aaaaaa</button>
+    
+    <script>
+        /*
+        浏览器已为我们提供 文档节点对象  此对象是window属性
+            可以在页面中直接使用，文档节点代表的是整个网页
+        */
+        //获取button对象
+        var btn = document.getElementById("btn");
+
+        //修改按钮文字
+        btn.innerHTML="sss";
+    </script>
+</body>
+</html>
