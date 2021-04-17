@@ -1,0 +1,90 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-17 16:10:13
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-17 16:30:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        创建一个正则表达式检查一个字符串中是否有aaa
+        */
+        var reg = /aaa/
+        console.log(reg.test("aab"));
+        console.log(reg.test("aaa"));
+
+        /*
+        量词
+         -通过量词设置一个内容出现的次数
+         -量词只对前面的内容起作用
+             -{n}  正好出现n次
+             -{m,n} 出现m-n次
+             -{m,}   出现m次以上
+             - + 至少一个 相当于{1,}
+             - * 0个或多个  相当于{0，}
+             - ？ 0个或一个  相当于{0,1}
+        */
+        var reg = /a{3}/;   //连续3个a
+        reg = /(ab){3}/;
+        //   console.log(reg.test("aaa"));
+        console.log(reg.test("ababab"));
+
+        //出现1次到3次
+        reg = /ab{1,3}c/;
+
+        //+  至少一个
+        reg = /ab+c/;
+
+        //*  0个或多个
+        reg = /ab*c/;
+
+        // ? 0个或1 个
+        reg = /ab?c/;
+        console.log(reg.test("abc"));
+        console.log(reg.test("abbc"));
+        console.log(reg.test("abbbc"));
+
+
+        /*
+        检查一个字符串中是否以a开头
+            ^ 表示开头
+            [^]  表示存在除了什么之外 都对
+            $ 表示结尾
+        */
+
+        //开头为a
+        reg = /^a/;
+
+        //结尾为a
+        reg = /a$/;
+    //    console.log(reg.test("sfafa"))
+
+        //如果在正则表达式中同时使用^$ 则要求字符串必须完全符合正则表达式
+        reg = /^a$/;
+        console.log(reg.test("a"));
+        reg = /^a|a$/;
+        console.log(reg.test("aaa"));
+
+        //检查手机号是否合法
+        /*
+        1. 以1开头
+        2.后面10位为0-9任意数
+        */
+        var phone  =/^1[0-9]{10}$/ ;
+        console.log(phone.test("12545122141"));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

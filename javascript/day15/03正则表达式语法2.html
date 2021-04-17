@@ -1,0 +1,93 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-17 16:36:55
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-17 17:04:21
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        检查字符传中是否含有 .
+            . 表示任意字符 
+            
+        在正则表达式中使用\表示转移字符
+        \.  表示.
+        \\ 表示 \
+
+        注意：使用构造函数时，由于参数是一个字符串，而\是字符串中转义字符
+        */
+       var reg = /\./;
+       
+       reg = /\\/;
+
+       reg = new  RegExp("\\.");
+       reg = new  RegExp("\\\\");
+
+       console.log(reg.test("asa.fafe"));   //true
+       console.log(reg.test("asafafe"));   //false
+       console.log(reg);
+
+       /*
+       \w
+            -任意字母、数字、_下划线 [A-z0-9]
+       \W
+            -除了字母、数字、_x下划线 [^A-z0-9]
+       \d
+            -任意数字 [0-9]
+       \D
+            -除了数字 [^0-9]
+       \s
+            -任意空格
+       \S
+            -除了空格
+       \b
+            -单词边界
+       \B
+            -除了单词边界
+       */
+
+       reg =/\w/;
+       reg =/\W/;
+
+       reg =/\d/;
+       reg =/\D/;
+
+       reg =/\s/;
+       reg =/\S/;
+
+       //创建一个正则表达式检查字符串中是否有单词child
+       reg =/\bchild\b/;    //指定单词长度完全一样
+       reg =/\Bchild\B/;        //存在这个单词
+
+       console.log(reg.test("achilda"));
+
+       //接收用户输入
+    //    var str = prompt("请输入用户名：");
+       
+    //去除字符串中的空格
+    //使用""来替换空格
+        var str ="      he   llo        ";
+
+    //    str = str.replace(/\s/g,"");
+    
+    // 去除开头的空格
+    //    str = str.replace(/^\s*/,"");
+       //去结尾的空格
+    //    str = str.replace(/\s*$/,"");
+
+    //去除开头和结尾的空格
+    str = str.replace(/^\s*|\s*$/g,"");
+       console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
