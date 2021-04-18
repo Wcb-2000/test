@@ -1,0 +1,43 @@
+#total{
+    width: 400px;
+    display: inline-block;
+}
+#total .inner{
+    
+    padding: 10px 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+#city {
+  display: inline;
+  list-style: none;
+}
+#game {
+    display: inline;
+    list-style: none;
+  }
+  #phone {
+    display: inline;
+    list-style: none;
+  }
+li{
+    float: left;
+    margin: 0 10px;
+    background-color: rgb(82, 194, 82);
+    width: auto;
+    padding: 5px 5px;
+}
+
+
+
+#btnList{
+    width: 300px;
+    display: inline-block;
+ 
+}
+#btnList button{
+    width: 300px;
+    line-height:22px;
+    margin-bottom: 2px;
+}
