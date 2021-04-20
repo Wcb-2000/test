@@ -1,0 +1,130 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-18 23:03:13
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-20 10:32:11
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /*
+            全选按钮
+                -点击按钮后，四个多选框全部选中
+            */
+
+              //获取四个多选框items
+              var items = document.getElementsByName("items");
+
+
+            // 1.#checkedAllBox
+            //为#checkedAllBox绑定一个点击响应事件
+            var checkedAllBox = document.getElementById("checkedAllBtn");
+            checkedAllBox.onclick = function () {
+
+              
+                // 遍历items
+                for (var i = 0; i < items.length; i++) {
+                    //设置四个多选框为选中状态
+                    //通过多选框的checked属性 可以来获取或设置多选框的选中状态
+                    items[i].checked = true;
+                }
+
+                //全不选
+                //为#checkedNoBtn绑定一个点击响应事件
+                var checkedNoBtn = document.getElementById("checkedNoBtn");
+                checkedNoBtn.onclick = function () {
+
+                  
+                    // 遍历items
+                    for (var i = 0; i < items.length; i++) {
+                        //设置四个多选框为选中状态
+                        //通过多选框的checked属性 可以来获取或设置多选框的选中状态
+                        items[i].checked = false;
+                    }
+                }
+
+                /*
+                反选按钮
+                    -点击按钮，选中的变没选，没选的变选中
+                */
+                // 3.#checkedRevBtn 
+                var checkedRevBtn = document.getElementById("checkedRevBtn");
+                checkedRevBtn.onclick = function () {
+                     // 遍历items
+                     for (var i = 0; i < items.length; i++) {
+                        // 判断多选框的状态
+                        if( items[i].checked){
+                            //证明多选框被选中，变成未选中
+                            items[i].checked = false;
+                        }else{
+                            //证明多选框没被选中，变成选中
+                            items[i].checked = true;
+                        }
+                       
+                    }
+
+                       
+                }
+
+                //全选/全不选
+                var checkedAllBox = document.getElementById("checkedAllBox");
+                checkedAllBox.onclick = function () {
+                    // if ()
+
+                       
+                }
+
+                //提交
+                var submit = document.getElementById("submit");
+                submit.onclick = function () {
+                    
+                    
+                    var arr = [];
+
+                    // 遍历items
+                    for (var i = 0; i < items.length; i++) {
+                       if(items[i].checked = true){
+                           var result = arr.push(items);
+                       }
+                    }
+                    alert(arr);
+                }
+
+            };
+
+
+
+            // 2.#checkedNoBtn
+            
+            // 4.#submit
+            // 5.#checkedAllBox
+            // 6.#items
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="POST">
+        你的爱好是？<input type="checkbox" id="checkedAllBox">全选/全不选
+        <br>
+        <input type="checkbox" name="items" value="足球">足球
+        <input type="checkbox" name="items" value="篮球">篮球
+        <input type="checkbox" name="items" value="羽毛球">羽毛球
+        <input type="checkbox" name="items" value="乒乓球">乒乓球
+        <br>
+        <input type="button" id="checkedAllBtn" value="全 选">
+        <input type="button" id="checkedNoBtn" value="全不选">
+        <input type="button" id="checkedRevBtn" value="反 选">
+        <input type="button" id="submit" value="提 交">
+    </form>
+</body>
+
+</html>
