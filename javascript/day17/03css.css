@@ -1,0 +1,20 @@
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table tr td{
+    border: 1px solid black;
+  
+}
+
+caption
+{
+    width: 192px;
+    caption-side:bottom;
+    margin-top: 20px;
+    border-top: 1px  solid black;
+    border-left: 1px  solid black;
+    border-right: 1px  solid black;
+    border-collapse: collapse;
+}
