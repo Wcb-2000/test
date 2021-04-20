@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-04-18 23:03:13
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-04-20 10:46:28
+ * @LastEditTime: 2021-04-20 11:22:58
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -26,10 +26,8 @@
 
             // 1.#checkedAllBox
             //为#checkedAllBox绑定一个点击响应事件
-            var checkedAllBox = document.getElementById("checkedAllBtn");
-            checkedAllBox.onclick = function () {
-
-
+            var checkedAllBtn = document.getElementById("checkedAllBtn");
+            checkedAllBtn.onclick = function () {
                 // 遍历items
                 for (var i = 0; i < items.length; i++) {
                     //设置四个多选框为选中状态
@@ -37,60 +35,81 @@
                     items[i].checked = true;
                 }
 
-                // 2.#checkedNoBtn
-                //全不选
-                //为#checkedNoBtn绑定一个点击响应事件
-                var checkedNoBtn = document.getElementById("checkedNoBtn");
-                checkedNoBtn.onclick = function () {
+                //将全选/全不选设置为选中
+                checkedAllBox.checked = true;
+            }
+
+            // 2.#checkedNoBtn
+            //全不选
+            //为#checkedNoBtn绑定一个点击响应事件
+            var checkedNoBtn = document.getElementById("checkedNoBtn");
+            checkedNoBtn.onclick = function () {
 
 
-                    // 遍历items
-                    for (var i = 0; i < items.length; i++) {
-                        //设置四个多选框为选中状态
-                        //通过多选框的checked属性 可以来获取或设置多选框的选中状态
-                        items[i].checked = false;
+                // 遍历items
+                for (var i = 0; i < items.length; i++) {
+                    //设置四个多选框为选中状态
+                    //通过多选框的checked属性 可以来获取或设置多选框的选中状态
+                    items[i].checked = false;
+                }
+
+                //将全选/全不选设置为不选中
+                checkedAllBox.checked = false;
+            }
+
+            /*
+            反选按钮
+                -点击按钮，选中的变没选，没选的变选中
+            */
+            // 3.#checkedRevBtn 
+            var checkedRevBtn = document.getElementById("checkedRevBtn");
+            checkedRevBtn.onclick = function () {
+
+                //将checkedAllBox设置为选中状态
+                checkedAllBox.checked = true;
+                
+                // 遍历items
+                for (var i = 0; i < items.length; i++) {
+                    // // 判断多选框的状态
+                    // if( items[i].checked){
+                    //     //证明多选框被选中，变成未选中
+                    //     items[i].checked = false;
+                    // }else{
+                    //     //证明多选框没被选中，变成选中
+                    //     items[i].checked = true;
+                    // }
+
+                    items[i].checked = !items[i].checked;
+
+                    //判断四个多选框是否选中
+                    //只要有一个没选择则不是全选
+                    if (!items[i].checked) {
+                        //一旦进入判断，则证明不是全选状态
+                        //将checkAllBox设置为没选中状态
+                        checkedAllBox.checked = false;
+
                     }
                 }
 
-                /*
-                反选按钮
-                    -点击按钮，选中的变没选，没选的变选中
-                */
-                // 3.#checkedRevBtn 
-                var checkedRevBtn = document.getElementById("checkedRevBtn");
-                checkedRevBtn.onclick = function () {
-                    // 遍历items
-                    for (var i = 0; i < items.length; i++) {
-                        // // 判断多选框的状态
-                        // if( items[i].checked){
-                        //     //证明多选框被选中，变成未选中
-                        //     items[i].checked = false;
-                        // }else{
-                        //     //证明多选框没被选中，变成选中
-                        //     items[i].checked = true;
-                        // }
+                //反选时需要判断四个多选框是否选中
+                
 
-                        items[i].checked = !items[i].checked;
-
-                    }
+            }
 
 
-                }
-
-
-                // 4.#submit
-                //提交
-                var submit = document.getElementById("submit");
-                submit.onclick = function () {
-                    // 遍历items
-                    for (var i = 0; i < items.length; i++) {
-                        if (items[i].checked) {
-                            alert(items[i].value);
-                        }
+            // 4.#submit
+            //提交
+            var submit = document.getElementById("submit");
+            submit.onclick = function () {
+                // 遍历items
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked) {
+                        alert(items[i].value);
                     }
                 }
+            }
 
-            };
+
 
             // 5.#checkedAllBox
             //全选/全不选
@@ -110,15 +129,41 @@
                     //     items[i].checked = false;
                     // }
                     items[i].checked = this.checked;
-                       
-                    }
+
+                }
 
 
             }
 
 
-
             // 6.#items
+            /*
+            如果四个多选框全选中，则全选\全不选  选中
+            如果四个多选框不全都选中，则不选中
+            */
+
+            //为四个多选框绑定点击相应函数
+            for (var i = 0; i < items.length; i++) {
+                //为每个多选绑定一个点击事件
+                items[i].onclick = function () {
+
+                    //将checkedAllBox设置为选中状态
+                    checkedAllBox.checked = true;
+
+                    for (var j = 0; j < items.length; j++) {
+                        //判断四个多选框是否选中
+                        //只要有一个没选择则不是全选
+                        if (!items[j].checked) {
+                            //一旦进入判断，则证明不是全选状态
+                            //将checkAllBox设置为没选中状态
+                            checkedAllBox.checked = false;
+
+                            //一旦进入判断，得出结果，不用再循环,提高性能
+                            break;
+                        }
+                    }
+                }
+            }
         }
     </script>
 </head>
