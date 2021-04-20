@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-04-18 23:03:13
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-04-20 10:32:11
+ * @LastEditTime: 2021-04-20 10:46:28
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -20,8 +20,8 @@
                 -点击按钮后，四个多选框全部选中
             */
 
-              //获取四个多选框items
-              var items = document.getElementsByName("items");
+            //获取四个多选框items
+            var items = document.getElementsByName("items");
 
 
             // 1.#checkedAllBox
@@ -29,7 +29,7 @@
             var checkedAllBox = document.getElementById("checkedAllBtn");
             checkedAllBox.onclick = function () {
 
-              
+
                 // 遍历items
                 for (var i = 0; i < items.length; i++) {
                     //设置四个多选框为选中状态
@@ -37,12 +37,13 @@
                     items[i].checked = true;
                 }
 
+                // 2.#checkedNoBtn
                 //全不选
                 //为#checkedNoBtn绑定一个点击响应事件
                 var checkedNoBtn = document.getElementById("checkedNoBtn");
                 checkedNoBtn.onclick = function () {
 
-                  
+
                     // 遍历items
                     for (var i = 0; i < items.length; i++) {
                         //设置四个多选框为选中状态
@@ -58,54 +59,65 @@
                 // 3.#checkedRevBtn 
                 var checkedRevBtn = document.getElementById("checkedRevBtn");
                 checkedRevBtn.onclick = function () {
-                     // 遍历items
-                     for (var i = 0; i < items.length; i++) {
-                        // 判断多选框的状态
-                        if( items[i].checked){
-                            //证明多选框被选中，变成未选中
-                            items[i].checked = false;
-                        }else{
-                            //证明多选框没被选中，变成选中
-                            items[i].checked = true;
-                        }
-                       
+                    // 遍历items
+                    for (var i = 0; i < items.length; i++) {
+                        // // 判断多选框的状态
+                        // if( items[i].checked){
+                        //     //证明多选框被选中，变成未选中
+                        //     items[i].checked = false;
+                        // }else{
+                        //     //证明多选框没被选中，变成选中
+                        //     items[i].checked = true;
+                        // }
+
+                        items[i].checked = !items[i].checked;
+
                     }
 
-                       
+
                 }
 
-                //全选/全不选
-                var checkedAllBox = document.getElementById("checkedAllBox");
-                checkedAllBox.onclick = function () {
-                    // if ()
 
-                       
-                }
-
+                // 4.#submit
                 //提交
                 var submit = document.getElementById("submit");
                 submit.onclick = function () {
-                    
-                    
-                    var arr = [];
-
                     // 遍历items
                     for (var i = 0; i < items.length; i++) {
-                       if(items[i].checked = true){
-                           var result = arr.push(items);
-                       }
+                        if (items[i].checked) {
+                            alert(items[i].value);
+                        }
                     }
-                    alert(arr);
                 }
 
             };
 
-
-
-            // 2.#checkedNoBtn
-            
-            // 4.#submit
             // 5.#checkedAllBox
+            //全选/全不选
+
+            //在事件的响应函数值，函数给谁绑定的，this就是谁
+
+            //函数给checkedAllBox绑定，this就是checkedAllBox
+
+            var checkedAllBox = document.getElementById("checkedAllBox");
+            checkedAllBox.onclick = function () {
+                // alert(this ===checkedAllBox );   //this是checkedAllBox
+
+                for (var i = 0; i < items.length; i++) {
+                    // if(checkedAllBox.checked){
+                    //     items[i].checked=true;
+                    // }else{
+                    //     items[i].checked = false;
+                    // }
+                    items[i].checked = this.checked;
+                       
+                    }
+
+
+            }
+
+
+
             // 6.#items
         }
     </script>
