@@ -1,0 +1,90 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-20 11:30:18
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-20 11:59:52
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+
+            //获取body标签
+            // var body = document.getElementsByTagName("body")[0];
+
+            //在document中 有一个属性，它保存的是body的引用
+            var body = document.body;
+
+            //document.documentElement 保存的是html根标签
+            var html = document.documentElement;
+
+            //document.all 代表页面中所有的元素
+            var all = document.all;
+            // console.log(all.length);
+            //     for(var i=0;i<all.length;i++){
+            //         console.log(all[i]);
+            //     }
+
+            // all = document.getElementsByTagName("*");  返回与上面all一样
+            
+
+            /*
+            根据元素的class属性值查询以租元素节点对象
+            getElementsByClassName()可以根据class属性值获取一组元素节点对象，
+            但是该方法不支持ie8及以下的浏览器
+            */
+                var box1 = document.getElementsByClassName("box1");
+                console.log(box1.length);
+
+            //获取页面中的所有的div
+            var divs = document.getElementsByClassName("div");
+            console.log(divs.length);
+
+            //获取class为box1中的所有的div
+            //css的方法 .box1 div
+            
+            // document.querySelector()
+            //  -需要一个选择器的字符串作为参数，可以根据一个css选择器来查询元素节点对象
+            //  -虽然ie8中没有getElementsByClassName()但是可以用querySelector()来代替
+            //  -使用该方法总会返回唯一的一个元素，如果满足条件的元素有多个，但它只会返回第一个
+
+            var div = document.querySelector(".box1 div");
+            var box1 = document.querySelector(".box1");
+            console.log(div.innerHTML);
+            console.log(box1.innerHTML);
+                
+            /*
+                document.querySelectorAll()
+                    -该方法和querySelector()用法类似，不同的是他会将符合条件的元素封装到一个数组中返回
+                    -即使符合条件的元素只有一个，它也会返回数组
+            */
+            var box1  = document.querySelectorAll(".box1");
+            var box1  = document.querySelectorAll("#box1");  //返回数组
+            console.log(box1.length);
+            console.log(box1);  
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div>aaa</div>
+    </div>
+    <div class="box1">
+        <div>aaa</div>
+    </div>
+    <div class="box1">
+        <div>aaa</div>
+    </div>
+    <div class="box1">
+        <div>aaa</div>
+    </div>
+
+    <div></div>
+</body>
+</html>
