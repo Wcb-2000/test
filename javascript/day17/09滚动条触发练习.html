@@ -1,0 +1,104 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-21 21:16:01
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-21 22:13:33
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #info {
+            width: 200px;
+            height: 400px;
+            background-color: chartreuse;
+            overflow: auto;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            /*
+            当垂直滚动条滚动到底部时，表单可用‘
+            onscroll
+                -该事件会在滚动条滚动时触发
+            */
+
+            //获取id为info的p元素
+            var info = document.getElementById("info");
+            //获取input表单项
+            var inputs = document.getElementsByTagName("input");
+            //为info绑定一个滚动条事件
+            info.onscroll = function () {
+                // console.log(" 我滚了");
+                //检查垂直滚动条是否到底
+
+                if (parseInt(info.scrollHeight - info.scrollTop + 1) == info.clientHeight) {
+                    //滚动条滚动到底，使表单可用
+                    // alert("aaa");  
+                    // alert("a");
+                    inputs[0].disabled = false;
+                    inputs[1].disabled = false;
+                }else{
+                    inputs[0].disabled = true;
+                    inputs[1].disabled = true;
+                }
+            }
+        };
+
+
+    </script>
+</head>
+
+<body>
+    <h3>欢迎老板</h3>
+    <p id="info">
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+        老板，如果你不阅读，则别想来；
+    </p>
+    <!-- 如果添加disabled, 则表单项显示不可用 -->
+    <input type="checkbox" disabled>我已仔细阅读，遵守规则。
+    <br>
+    <input type="submit" value="注册" disabled>
+</body>
+
+</html>
