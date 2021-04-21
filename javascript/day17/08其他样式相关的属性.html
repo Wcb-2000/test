@@ -1,0 +1,140 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-21 16:27:15
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-21 20:55:38
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: greenyellow;
+            padding: 20px;
+            border: 10px solid blueviolet;
+        }
+        #box2{
+            background-color: brown;
+            padding: 100px;
+        }
+        #box4{
+            background-color: burlywood;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+        }
+        #box5{
+            width: 300px;
+            height: 500px;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            var box1 = document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            var box4 = document.getElementById("box4");
+
+            btn01.onclick = function () {
+                /*
+                clientWidth
+                clientHeight
+                    -这些属性可以获取元素的可见宽度和高度
+                    -这些属性都是不带px的，返回都是一个数字，可以直接进行计算
+                    -会获取元素宽度和高度，包括内容区和内边距  不包括border
+                    -这些东西都是只读，不可修改
+                 */
+                // alert(box1.clientHeight);
+                // alert(box1.clientWidth);
+                // box1.clientWidth = 300;  //没反应
+
+
+                /*
+                    offsetWidth
+                    offsetHeight
+                        - 获取元素的整个宽度或高度，包括内容区，内边距和边框
+                */
+                // alert(box1.offsetHeight);
+                // alert(box1.offsetWidth);
+
+
+                /*
+                    offsetParent
+                        -可以获取当前元素的定位父元素
+                        -会获取到当前元素最近的开启了定位（position）的祖先元素
+                            -如果所有的祖先元素都没有开启定位，则返回body
+                */
+                var op = box1.offsetParent;
+                //    alert(op.id);
+
+                /*
+                offsetLeft
+                    - 当前元素相对于其定位父元素的水平偏移量
+                offsetTop
+                    - 当前元素相对于其定位父元素的垂直偏移量
+                */
+                // alert(box1.offsetLeft);
+
+
+                // alert(box4.clientHeight);
+                /*
+                    scrollHeight
+                    scrollWidth
+                        -可以获取元素整个滚动区域的宽度或高度
+                        
+                */
+                // alert(box4.scrollHeight);
+
+                
+                /*
+                    scrollLeft
+                        -可获取实时滚动的距离，水平方向
+                    scrollTop
+                        --可获取实时滚动的距离，垂直方向
+                */
+            //    alert(box4.scrollTop);
+
+
+                // alert(box4.clientWidth);        //返回183，滚动条占17
+
+                //当满足scrollHeight-scrollTop == clientHeight
+                //说明垂直滚动条到底了
+
+                //当满足 scrollWidth - scrollLeft == clientWidth
+                //说明水平滚动条滚动到底了
+                alert(box4.scrollHeight-box4.scrollTop);  //返回183
+               
+
+                
+            };
+
+
+
+        }
+
+    </script>
+</head>
+
+<body id="aaa">
+    <button id="btn01">点我一下</button>
+
+    <div id="box4">
+        <div id="box5"></div>
+    </div>
+    
+    <br>
+    <div id="box2" style="position: relative;">
+        <div id="box1"></div>
+    </div>
+</body>
+
+</html>
