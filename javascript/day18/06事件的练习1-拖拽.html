@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-04-23 10:52:55
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-04-23 23:03:12
+ * @LastEditTime: 2021-04-24 13:28:18
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -15,10 +15,18 @@
     <title>Document</title>
     <style>
         #box1 {
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             background-color: brown;
             position: absolute;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(7, 6, 6);
+            position: absolute;
+            left: 50px;
+            top: 50px;
         }
     </style>
     <script>
@@ -37,7 +45,14 @@
             var box1 = document.getElementById("box1");
             //为box1绑定鼠标按下事件
             //当鼠标在被拖拽元素上 按下时，开始拖拽 onmousedown
-            box1.onmousedown = function () {
+            box1.onmousedown = function (event) {
+                event = event || window.event;
+                
+                //div偏移量 鼠标.clentX - 元素.offsetLeft
+                //div偏移量 鼠标.clentY - 元素.offsetTop
+                var ol = event.clientX - box1.offsetLeft;
+                var ot = event.clientY - box1.offsetTop;
+                
                 //为document绑定一个onmousemove事件
                 document.onmousemove = function (event){
 
@@ -46,13 +61,25 @@
 
                     //当鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
                     //获取鼠标的坐标
-                    var left = event.clientX;
-                    var top = event.clientY;
+                    var left = event.clientX-ol;
+                    var top = event.clientY-ot;
 
                     //修改box1的位置
                     box1.style.left = left + "px";
                     box1.style.top = top + "px";
                 };
+                
+                //为document绑定一个松开事件
+                document.onmouseup = function (){
+                    //当鼠标松开时，被拖拽元素固定在当前位置 onmouseup
+                    //取消 document的oumousemove事件
+                    document.onmousemove = null;
+
+                    //取消document的onmouseup事件
+                    document.onmouseup = null;     //没有这句 拖拽空白也会有反应，多此一举
+
+                    // alert("a");
+                }
             };
 
         };
@@ -61,7 +88,9 @@
 </head>
 
 <body>
+    你好
     <div id="box1"></div>
+    <div id="box2"></div>
 </body>
 
 </html>
