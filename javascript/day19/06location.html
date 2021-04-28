@@ -1,0 +1,73 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-28 11:04:21
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-28 11:20:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Location
+                -该对象封装了浏览器的地址信息
+        */
+
+        window.onload = function () {
+
+            //获取按钮对象
+            var btn = document.getElementById("btn");
+
+            btn.onclick = function () {
+
+                //如果直接打印location，则可以获取到地址栏的信息（当前页面的完整路径）
+                alert(location);
+
+                /*
+                    如果直接将location属性修改为一个完整的路径，或相对路径
+                    则我们页面会自动跳转到该路径，并且会生成相应的历史记录
+                */
+                // location = "http://www.baidu.com";
+                // location = "./05BOM-history.html"
+
+                /*
+                    assign()
+                        -用来跳转到其他页面，作用和直接修改location一样 
+                       
+                */
+                // location.assign( "http://www.baidu.com");
+
+                /*
+                    reload()
+                        -用于重新加载当前页面，作用和刷新按钮一样
+                        - 如果在方法中传递一个true，作为参数，则会强制清空缓存刷新页面
+                */
+                location.reload(true);
+
+                /*
+                    replace()
+                        - 可以使用一个新的页面替换当前页面，调用完毕也会跳转页面
+                        - 不会生成历史记录 ，不能使用回退按钮退回
+                */
+                location.replace("./05BOM-history.html");
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+
+    <h1>aaaa</h1>
+
+    <input type="text">
+    <a href=""></a>
+</body>
+
+</html>
