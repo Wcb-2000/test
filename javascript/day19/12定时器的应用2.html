@@ -1,0 +1,135 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-04-28 19:38:40
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-04-28 20:46:44
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 清楚默认样式 */
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+            //获取box1
+            var box1 = document.getElementById("box1");
+            //获取btn01
+            var btn01 = document.getElementById("btn01");
+
+            //获取btn02
+            var btn02 = document.getElementById("btn02");
+
+
+            
+            //点击按钮以后，使box1向右移动(left值增大)
+            btn01.onclick = function () {
+                move(box1,500,10);
+            };
+
+
+            //点击按钮以后，使box1向左移动(left值减小)
+            btn02.onclick = function () {
+                 
+                move(box1,0,10);
+            };
+        };
+
+        //定义timer保存定时器
+        var timer;
+
+        //尝试创建一个可以执行简单动画得函数
+        /*
+            参数：
+                1.obj：要执行动画的对象
+                3.target：执行动画的目标位置
+                2.speed:移动的速度
+        */
+        function move(obj,target,speed) {
+            //关闭上一次定时器
+            clearInterval(timer);
+
+            //获取元素目前的位置
+            var current = parseInt(getStyle(obj, "left")); 
+            
+            //判断速度的正负值
+            //如果从0向800移动，则speed为正
+            //如果从800向0移动，则speed为负
+            if(current > target){
+                speed = -speed;
+            }
+
+            //开启定时器，执行动画效果
+            timer = setInterval(function () {
+
+                //获取box1原来的left的值
+                var oldValue = parseInt(getStyle(obj, "left"));  //parseInt只提取数字，忽略px
+
+                //在旧值得基础上减小
+                var newValue = oldValue + speed;
+
+                //判断是否小于0
+                //500向0移动
+                //向左移动时，需要判断newValue是否小于target
+                //向右移动时，需要判断newValue是否大于target
+                if (speed<0&&newValue < target || speed > 0 && newValue>target) {
+                    newValue = target;
+                }
+
+                //将新值设置给box1
+                obj.style.left = newValue + "px";
+
+                //当元素移动到0px，停止动画
+                if (newValue == target) {
+                    //达到目的，停止定时器
+                    clearInterval(timer)
+                }
+            }, 100);
+
+        }
+
+        function getStyle(obj, name) {
+
+            if (window.getComputedStyle) {
+                //正常浏览器的方式
+                return getComputedStyle(obj, null)[name];
+            } else {
+                //IE8的方式，没有getConputerStyle()方法
+                return obj.currentStyle[name];
+            }
+
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <button id="btn01">点击按钮以后box1向右移动</button>
+    <button id="btn02">点击按钮以后box1向左移动</button>
+    <div id="box1"></div>
+</body>
+
+</html>
