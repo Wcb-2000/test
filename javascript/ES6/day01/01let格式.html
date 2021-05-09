@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-08 23:55:53
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 00:13:08
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        //声明变量
+        let a;
+        let b,c;
+        let e = 100;
+        let f = 231,g='aaaa',h=[];
+        
+        //1.let变量不能重复声明(防止污染)
+        // let g;
+        // let g;  报错
+
+        //2.块级作用域(外部读取不到)    全局，函数，eval（严格模式）
+        //在if else while for循环中使用let  也是块级作用域
+        // {
+        //     let girl ='吴楚标';
+        // }
+        // console.log(girl); //报错    var则可以读取
+
+        //3.不存在变量提升    不允许在变量声明之前获取变量，否则报错，而var可以
+        // console.log(song);  //undefind
+        // let song = 'aaaa';
+
+        //4.不影响作用域链
+        {
+            let school = '我';
+            function fn(){
+                console.log(school);
+            }
+            fn();
+        }
+
+    </script>
+</body>
+</html>
