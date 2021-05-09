@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-09 10:51:23
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 10:59:12
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6允许在大括号里面，直接写入变量和函数，作为对象的属性和方法
+        //这样书写更加的简洁
+        
+        let name = '标标';
+        let change = function(){
+            console.log('aaaa');
+        }
+        
+        const school = {
+            name,
+            change,
+            improve(){              //es6中 对象函数声明可以省略 :function
+                console.log("bbbb");
+            }
+        }
+        console.log(school);
+
+        let {improve} = school;  //解构
+        improve();
+    </script>
+</body>
+</html>
