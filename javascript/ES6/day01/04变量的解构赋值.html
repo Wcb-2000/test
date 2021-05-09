@@ -1,0 +1,46 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-09 10:31:52
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 10:40:31
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值
+        //这被称为解构赋值
+        //1.数组的解构
+        // const F4 = ['孙悟空','猪八戒','唐曾','沙和尚'];
+        // let [sun,zhu,tang,sha] = F4;
+        // console.log(sun);
+        // console.log(zhu);
+        // console.log(tang);
+        // console.log(sha);
+        
+        //2.对象的解构
+        const sun = {
+            name:'孙悟空',
+            age:"不详",
+            dayaojing:function(){
+                console.log("俺老孙来也");
+            }
+        };
+        
+        // let {name , age , dayaojing} = sun;
+        // console.log(name);
+        // console.log(age);
+        // console.log(dayaojing);
+
+        let {dayaojing} = sun;
+        dayaojing();
+    </script>
+</body>
+</html>
