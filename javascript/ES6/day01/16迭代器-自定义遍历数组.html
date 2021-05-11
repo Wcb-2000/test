@@ -1,0 +1,55 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-09 22:51:59
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 23:11:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明一个对象
+        const a = {
+            name:"aaa",
+            arr:[
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            [Symbol.iterator](){
+                //索引变量
+                let index = 0;
+
+                let _this=this;
+                return {
+                    next:function(){       //也可更改为箭头函数
+                        if(index < _this.arr.length){
+                           const result=  {value : _this.arr[index],done:false}  //这里this指向外层return
+                           //下标自增
+                           index++;
+                           return result;
+                        }else{
+                            return {value:undefined,done:true };
+                        }
+                    }
+                }
+            }
+        };
+
+        //遍历这个对象
+        for(let v of a){
+            console.log(v);
+        }
+        
+        // a.arr.forEach()
+    </script>
+</body>
+</html>
