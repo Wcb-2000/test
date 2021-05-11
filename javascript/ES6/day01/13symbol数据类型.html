@@ -1,0 +1,46 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-09 14:24:30
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 14:38:13
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建Symbol
+        let s = Symbol();
+         console.log(s,typeof s);
+
+        let s2 = Symbol('标标');   //唯一性
+        let s3 = Symbol('标标');
+        console.log(s2===s3);//false
+        
+        //Symbol.for 创建
+        let s4 = Symbol.for('标标');
+        let s5 = Symbol.for('标标');
+        console.log(s4,typeof s4);
+        console.log(s4===s5);  //true
+
+        //不能与其他数据进行运算
+        // let result =s+100;
+        // let result = s>100;
+        // let result =s+s;
+         
+        // USONB   you are so niubi
+        // U undefined
+        // s Symbol String
+        // o Object
+        // n Number null
+        // b Boolean
+
+    </script>
+</body>
+</html>
