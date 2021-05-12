@@ -1,0 +1,48 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-09 23:14:06
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-09 23:37:56
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生成器其实就是一个特殊的函数
+        
+        //异步编程 纯回调函数 node fs ajax mongodb
+
+        //函数代码的分隔符 yield,将函数体分成几块分别执行
+        function * gen(){
+            // console.log("A");
+            console.log(1);
+            yield '你好';
+            console.log(2);
+            
+            yield '不好';
+            console.log(3);
+
+            yield '很好';
+        }
+        
+        let iterator = gen();
+        // console.log(iterator);
+        iterator.next();  //调用一次执行一次代码块
+        iterator.next();
+        iterator.next();
+        console.log(iterator.next());
+
+        //遍历
+        for(let v of gen()){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>
