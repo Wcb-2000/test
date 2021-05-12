@@ -1,0 +1,37 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-11 11:13:11
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-11 11:32:31
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //实例化 Promise对象     改变p的状态
+        const p = new Promise(function(resolve,reject){     //两个形参分别代表值为true、false  并且定义给 p
+            setTimeout(function(){
+                // let data = '获取用户数据';
+                // resolve(data);    //调用p为true  调用then中的value值
+
+                let err = '获取失败';//调用p为false  调用then中的reason值
+                reject(err);
+            },1000)
+        });
+
+        //调用promise对象的then 方法   有两个回调函数p.then(function(),function());
+        p.then(function(value){
+            console.log(value);
+        },function(reason){
+            console.error(reason);
+        })
+    </script>
+</body>
+</html>
