@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-13 17:31:28
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-13 18:04:31
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类继承</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            //构造方法,固定
+            constructor(brand,price){
+                this.brand = brand;
+                this.price = price;
+            }
+
+            //父类的成员属性
+            call(){
+                console.log("我可以打电话");
+            }
+        }
+
+        class SmartPhone extends Phone {
+            //构造方法
+            constructor(brand,price,color,size){
+                super(brand,price); //Phone.call(this,brand,price);一样的功能
+                this.color = color;
+                this.size = size;
+            }
+            photo(){
+                console.log("拍照");
+            }
+            
+            playgame(){
+                console.log("玩游戏")
+            }
+
+            //子类对父类的重写
+            call(){
+                console.log("aaaaaa");
+            }
+        }
+        
+        const xiaomi = new SmartPhone('小米',1999,'黑色','5inch');
+        console.log(xiaomi);
+        xiaomi.call();
+        xiaomi.photo();
+        xiaomi.playgame();
+    </script>
+</body>
+</html>
