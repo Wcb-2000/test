@@ -1,0 +1,52 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-13 11:58:37
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-13 12:12:29
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //手机
+        function Phone(brand,price){
+            this.brand = brand;
+            this.price = price;
+        }
+
+        //添加方法
+        Phone.prototype.call = function(){
+            console.log("我可以打电话！！");
+        }
+
+        let xiaomi = new Phone('小米',2999);
+
+        xiaomi.call();
+        console.log(xiaomi);
+
+        //class 语法糖
+        class Phone1{
+            //构造方法，名字固定不能修改
+            constructor(brand,price){
+                this.brand = brand;
+                this.price = price;
+            }
+
+            // 方法必须使用该语法，不能使用es5的对象完整性 例:call:function(){}
+            call(){
+                console.log("我可以打电话!");
+            }
+        }
+        let huawei = new Phone1("华为",5999);
+        huawei.call();
+        console.log(huawei);
+    </script>
+</body>
+</html>
