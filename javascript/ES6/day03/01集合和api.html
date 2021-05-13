@@ -1,0 +1,47 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-12 17:16:32
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-12 17:25:20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明一个set（集合）  类似数组
+        let s =new Set();
+        let s2 = new Set(['a','b','c','d','a']);  //自动去重
+
+        //元素的个数size  类似数组的length
+        console.log(s2.size);
+
+        //添加新的元素
+        s2.add('e');
+
+        //删除元素
+        s2.delete('a');
+
+        //检测  存在返回true 不存在返回false
+        console.log(s2.has('b'));
+
+        //清空  删除全部
+        // s2.clear();
+
+        // 遍历
+        for(let v of s2){
+            console.log(v);
+        }
+        
+        
+        // console.log(s,typeof s);
+        console.log(s2);
+    </script>
+</body>
+</html>
