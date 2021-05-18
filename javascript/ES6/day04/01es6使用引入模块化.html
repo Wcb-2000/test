@@ -1,0 +1,33 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-14 11:01:50
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-18 00:03:50
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6模块化</title>
+</head>
+<body>
+    <!-- <script src="../../tools.js"></script> -->
+    <script type="module">
+        //引入m1.js 模块内容
+        import * as m1 from "./m1.js";
+        //引入m2.js 模块内容
+        import * as m2 from "./m2.js";
+        //引入m3.js 模块内容
+        import * as m3 from "./m3.js";
+
+        console.log(m1);
+        console.log(m2);
+        console.log(m3);
+
+        m3.default.change();
+    </script>
+</body>
+</html>
