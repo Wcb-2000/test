@@ -1,0 +1,34 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-20 17:38:59
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-20 22:03:20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <span>{{name}}</span>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //let(变量)  const(常量)
+        const app = new Vue({
+            el: '#app',   //用于挂载要管理的元素   
+            data: {          //用于定义数据
+                message: '你好啊',
+                name:'aaa'
+            }
+        })
+    </script>
+</body>
+</html>
