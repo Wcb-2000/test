@@ -1,0 +1,60 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-23 11:14:12
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-23 13:55:24
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>当前计数：{{counter}}</h2>
+        <!-- <button v-on:click="counter++">+</button> -->
+        <!-- <button v-on:click="counter--">-</button> -->
+        <button v-on:click="add">+</button>
+        <button @click="sub">-</button>
+        <!-- @click   语法糖-->
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //module proxy 代理
+        const obj = {
+            counter: 0
+        }
+         
+        const app = new Vue({
+            el: '#app',
+            data: obj,
+            // {
+            //     counter:0,
+            // },
+            methods: {
+                add: function () {
+                    console.log('add被执行');
+                    this.counter++
+
+                },
+                sub: function () {
+                    console.log('sub被执行');
+                    this.counter--
+                }
+            }
+        })
+
+        //原生js方法
+        // 1.拿button元素
+        // 2.添加监听事件
+    </script>
+</body>
+
+</html>
