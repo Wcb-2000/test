@@ -1,0 +1,45 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-23 17:51:06
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-23 18:00:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 错误的做法：这里不可以使用mustache -->
+        <!-- <img src="{{imgURL}}" alt=""> -->
+
+        <!-- 正确的做法： 使用v-bind指令 -->
+        <img v-bind:src="imgURL" alt="">
+        <a v-bind:href="ahref">百度一下</a>
+        {{message}}
+
+        <!-- v-bind的语法糖写法 加一个： -->
+        <img :src="imgURL" alt="">
+        <a :href="ahref">百度一下</a>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            imgURL:'https://img-home.csdnimg.cn/images/20201208110657.jpg',
+            ahref:'http://www.baidu.com'
+        },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
