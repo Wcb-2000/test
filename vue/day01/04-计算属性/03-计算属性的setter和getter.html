@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-25 12:07:52
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-25 17:35:43
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <h2>{{firstName+' '+lastName}}</h2>
+        <h2>{{firstName}} {{lastName}}</h2>
+        
+        {{fullName}}
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            firstName:'kobe',
+            lastName:'james'
+        },
+        computed: {
+
+            // fullName:function(){
+            //     return this.firstName+' ' + this.lastName
+            // }
+            
+
+                //完整写法：使用fullName属性 是调用里面的get方法 因此是不用加（）
+            fullName:{
+                set:function(newValue){
+                    // console.log('----',newValue);
+                    const names = newValue.split(' ');  //按空格切分为新数组  
+                    this.firstName = names[0];
+                    this.lastName = names[1];
+                },
+                get:function(){
+                    return this.firstName+' ' + this.lastName
+                }
+            }
+        },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

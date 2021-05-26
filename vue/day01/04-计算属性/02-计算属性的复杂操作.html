@@ -1,0 +1,60 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-25 11:32:18
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-25 11:43:44
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{books[0].price}}</h2>
+        <h2>{{totalPrice}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            books:[
+                {id:1,name:'前端学习',price:100},
+                {id:2,name:'深入计算机',price:20},
+                {id:3,name:'代码大全',price:50},
+                {id:4,name:'c语言',price:120}
+            ]
+        },
+            computed: {
+                totalPrice:function(){
+                    let result =0;
+                    // for(let i=0;i<this.books.length;i++){
+                    //     result +=this.books[i].price
+                    // }
+                    // return result;
+
+
+                    // for(let i in this.books){
+                    //     result +=this.books[i].price
+                    // }
+                    // return result;
+
+                    for(let book of this.books){
+                        result +=book.price
+                    }
+                    return result;
+                }
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

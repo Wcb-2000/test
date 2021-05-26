@@ -1,0 +1,52 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-25 17:32:33
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-25 17:40:54
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <!-- 1.直接拼接 -->
+        <h2>{{firstName}} {{lastName}}</h2>
+
+        <!-- 2.定义methods -->
+        <h2>{{getFullName()}}</h2>
+
+        <!-- 3.通过computed -->
+        <h2>{{fullName}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            firstName:'kobe',
+            lastName:'james'
+        },
+            methods: {
+                getFullName:function(){
+                    return this.firstName+' '+this.lastName
+                }
+            },
+            computed: {
+                fullName:function(){
+                    return this.firstName+' '+this.lastName
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
