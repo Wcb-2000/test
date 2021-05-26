@@ -1,0 +1,46 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-23 23:24:49
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-23 23:38:33
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h2 :style="{key(属性名): value(属性值)}">{{message}}</h2> -->
+        <!-- '50px' 必须加单引号，否则是当作变量去解析 -->
+        <!-- <h2 :style="{fontSize: '50px'}">{{message}}</h2> -->
+        
+        <!-- finalSize 当作变量使用 -->
+        <!-- <h2 :style="{fontSize: finalSize}">{{message}}</h2> -->
+        <h2 :style="{fontSize: finalSize + 'px',color: finalColor}">{{message}}</h2>
+        <h2 :style="getStyle()">{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            finalSize:100,
+            finalColor: 'red'
+        },
+            methods: {
+                getStyle:function(){
+                    return {fontSize: this.finalSize + 'px',color: this.finalColor}
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
