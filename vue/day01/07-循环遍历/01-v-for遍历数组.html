@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-26 16:21:18
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-26 16:25:44
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.遍历的过程中，没有使用索引值（下标值） -->
+        <ul>
+            <li v-for="item in names">{{item}}</li>
+        </ul>
+
+        <!-- 2.在遍历的过程中 获取索引值 -->
+        <ul>
+            <li v-for="(item,index) in names">{{index+1}}.{{item}}</li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            names:['白骨精','猪八戒','孙悟空','沙和尚']
+        },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

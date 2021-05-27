@@ -1,0 +1,53 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-26 16:28:17
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-26 16:47:43
+ * @Description: 
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.遍历对象得过程中，如果只是获取一个值，那么获取到得是value -->
+        <ul>
+            <li v-for="item in info">{{item}}</li>
+        </ul>
+
+        <!-- 2.获取key和value 格式： (value,key) -->
+        <ul>
+            <li v-for="(value,key) in info">{{key}}:{{value}}</li>
+        </ul>
+        
+        <!-- 2.获取key和value,index 格式：(value,key,index) -->
+        <ul>
+            <li v-for="(value, key, index) in info">{{key}}:{{value}}--{{index}}</li>
+        </ul>
+        
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            info:{
+                name:'why',
+                age:18,
+                height:1.88
+            }
+        },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
