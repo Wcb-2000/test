@@ -1,0 +1,61 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-26 23:04:51
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-26 23:40:43
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //生命周期函数 就是vue实例在某一时间点会自动执行得函数
+        const app = new Vue({
+            el: '#app',
+            // template:"<div>hello world</div>",
+            beforeCreate() {
+                console.log("aaaa");
+            },
+            created() {
+                console.log("created");
+            },
+            beforeMount() {   //还未渲染
+                console.log(this.$el);  //$el z指的是el所指向的标签
+                console.log("beforeMount");
+            },
+            mounted() {    //已渲染
+                console.log(this.$el);
+                console.log("mount");
+            }, 
+            beforeDestroy() {
+                console.log("beforeDestroy");
+            },
+            destroyed() {
+                console.log("destory");
+            },
+            beforeUpdate() {
+                console.log("beforeUpdate");
+            },
+            updated() {
+                console.log("update");
+            },
+            data: {
+                message: 'hello'
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
