@@ -1,0 +1,54 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 14:39:49
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 15:00:14
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <child content="hello world"></child> -->
+        <child content="aaaa"></child>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // props特性   父组件和传递给子组件  同时子组件也声明了同名的属性 可以相互接收  
+        //父组件传值进去后 子组件可以获取值 并通过插值表达式 将值显示在dom上  但是属性不会显示在dom上 例如content
+        
+        //非props特性 子组件不能接收传递的值  
+        Vue.component("child", {
+            props: {
+                content: {
+                    // content:String,   接收必须为字符串
+                    // content:[String,Number]   //字符串或数字   Number 则为数字
+                    type: String,
+                    required: true,   //true表示必须传值  false表示不一定
+                    default: 'default value' ,  //默认值    不传值时  显示default value
+                    validator(value){
+                        return (value.length>5)  //传入字符串内容长度必须大于5  不符合则报错
+                    }
+                }
+            },
+            template: '<div>{{content}}</div>'
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello'
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

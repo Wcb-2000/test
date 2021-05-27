@@ -1,0 +1,48 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 21:05:03
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 21:15:23
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        
+        <child>
+            <!-- 作用域插槽 slot-scope接收子组件传递的参数 -->
+            <template slot-scope="props">
+                <li>{{props.item}}</li>
+            </template>
+        </child>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('child', {
+            data () {
+                return {
+                    list:[1,2,3,4]
+                }
+            },
+            template:'<div>hello<ul><slot v-for="item of list" :item=item>{{item}}</slot></ul></div>'
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello'
+        },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

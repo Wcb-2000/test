@@ -1,0 +1,56 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 10:32:45
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 13:30:07
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. 在标签中添加is属性 确保标签在table中 ol li select-option也是如此 -->
+        <table>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+        </table>
+        
+        <!-- 1. 在标签中添加is属性 确保标签在table中 ol li select-option也是如此 -->
+        <table>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+            <tr is="row"></tr>
+        </table>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('row', {
+            data () {
+                return {
+                    content:'this is a row'
+                }
+            },
+            template: '<tr><td>{{content}}</td></tr>'
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello'
+            },
+            methods: {},
+
+
+        });
+    </script>
+</body>
+
+</html>

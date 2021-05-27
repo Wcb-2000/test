@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 13:59:29
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 14:09:54
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <counter ref="one" @change='handleChange'></counter>
+        <counter ref="two" @change='handleChange'></counter>
+        <div>{{total}}</div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('counter', {
+            template:'<div @click="handleClick">{{number}}</div>',
+            data () {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                handleClick(){
+                    this.number++,
+                    this.$emit('change')   //监听
+                }
+            }
+        }
+        )
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello',
+                total:0
+            },
+            methods: {
+                handleChange(){
+                    this.total=this.$refs.one.number + this.$refs.two.number
+                    console.log(this.$refs.one.number );
+                    console.log(this.$refs.two.number );
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 16:28:03
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 16:36:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+        <!-- <child @click="handleClick"></child> -->
+
+        <!-- 自定义组件绑定原生事件   .native -->
+        <child @click.native="handleClick"></child>   
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+        Vue.component("child", {
+            // template:'<div @click="handleClick2">hello world</div>',
+            template:'<div>hello world</div>',
+            methods: {
+                // handleClick2(){
+                //      this.$emit('click')   
+                // }
+            }
+        })
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello'
+        },
+            methods: {
+                handleClick(){
+                    alert("click")
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

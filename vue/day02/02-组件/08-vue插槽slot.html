@@ -1,0 +1,54 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 17:05:26
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 17:36:34
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <child>
+             <!-- slot插槽   只有一个  代表总体  组件内部的标签都属于一个插槽 -->
+            <p> </p>
+            <h1>dell</h1>
+        </child>
+
+        <body-content>
+           
+            <!-- 聚名插槽 给插槽取名字 并引用  多个 相当于给每个标签定义标识     -->
+            <!-- 也可自定义默认聚名插槽  当没引用时显示默认值 -->
+            <div class="header" slot="header">header</div> 
+            <div class="footer" slot="footer">footer</div>
+        </body-content>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        
+        Vue.component('body-content', {
+            template: '<div> <slot name="good">default good</slot> <slot name="header"></slot> <div class="content">content</div> <slot name="footer"></slot> </div>'  //slot 可以在自定义组件中识别标签
+        })
+
+        Vue.component('child', {
+            template: '<div><p>hello</p><slot>默认内容</slot></div>'  //slot 可以在自定义组件中识别标签
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello'
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

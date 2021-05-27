@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 21:17:31
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 21:36:20
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <child-one v-if="type ==='child-one'"></child-one>
+        <child-two v-if="type ==='child-two'"></child-two>
+
+        <!-- 动态组件 -->
+        <!-- <component :is="type"></component> -->
+        <button @click="handleBtnClick">change</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('child-one', {
+            template: '<div v-once>child-one</div>'
+        })
+
+        Vue.component('child-two', {
+            template: '<div v-once>child-two</div>'
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello',
+                type: 'child-one'
+            },
+            methods: {
+                handleBtnClick() {
+                    this.type = this.type === 'child-one' ? 'child-two' : 'child-one';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
