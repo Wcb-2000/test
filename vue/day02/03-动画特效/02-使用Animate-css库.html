@@ -1,0 +1,79 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 21:38:41
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 23:42:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.min.css"/>
+</head>
+
+<style>
+    /* @keyframes bounce-in{
+        0%{
+            transform: scale(0);
+        }
+        50%{
+            transform: scale(1.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+
+    .fade-leave-active{
+        transform-origin: left center;
+        animation: bounce-in 1s;
+    }
+    .fade-enter-active{
+        transform-origin: left center;
+       animation: bounce-in 1s reverse; 
+    }
+  */
+    
+
+</style>
+
+<body>
+    <!-- 使用animated库注意事项
+        1.需要自定义名字
+        2.类中必须包含 animated -->
+    
+    <div id="app">
+        <!--transition  过渡（渐变）效果  -->
+        <!-- enter-active-class 入场动画效果
+             leave-active-class 出场动画效果 -->
+        <transition name="fade" enter-active-class="animated swing" leave-active-class="animated shake">
+            <div v-if="show">hello world</div> 
+        </transition>   
+        <!-- <transition name="fade" enter-active-class="animated swing" leave-active-class="animated shake">
+            <div v-show="show">hello world</div> 
+        </transition>  -->
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            show:true
+        },
+            methods: {
+                handleClick(){
+                    this.show= !this.show
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

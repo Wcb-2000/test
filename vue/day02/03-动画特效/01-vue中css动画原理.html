@@ -1,0 +1,59 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-27 21:38:41
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-27 23:00:40
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<style>
+    /* vue中的css样式 是通过底层原理实现 自动向标签中加入属性 */
+    .fade-leave-to, .fade-enter{
+        opacity: 0; 
+    }
+    .fade-leave-active,.fade-enter-active{
+       transition: opacity 3s;
+    }
+ 
+    
+
+</style>
+
+<body>
+    <div id="app">
+        <!--transition  过渡（渐变）效果  -->
+        <transition name="fade" mode="">
+            <div v-if="show">hello world</div> 
+        </transition>   
+        <transition name="fade" mode="">
+            <div v-show="show">hello world</div> 
+        </transition> 
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+            message: 'hello',
+            show:true
+        },
+            methods: {
+                handleClick(){
+                    this.show= !this.show
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
