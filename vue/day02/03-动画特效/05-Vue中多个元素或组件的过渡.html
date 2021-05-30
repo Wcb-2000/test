@@ -2,7 +2,7 @@
  * @Author: 吴楚标
  * @Date: 2021-05-28 22:53:48
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-05-30 11:48:22
+ * @LastEditTime: 2021-05-30 12:17:29
  * @Description: 
 -->
 
@@ -12,7 +12,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script>import Velocity from 'velocity-animate'</script>
+    <script src="../js/vue.js"></script>
+    <!-- <script>import Velocity from 'velocity-animate'</script> -->
     <style>
         .v-enter, .v-leave-to{
             opacity: 0;
@@ -25,24 +26,35 @@
 
 <body>
     <div id="app">
-        <transition>
-            <div v-if="show">hello</div>
-            <div v-else>bye world</div>
+        <!-- mode 展示 动画的状态  in-out 先进入 再退出  out-in 先隐藏 在显示  -->
+        <transition mode="out-in">
+            <component :is="type"> </component>
+            <!-- <child v-if="show"></child>
+            <child-one v-else></child-one> -->
+            <!-- <div v-if="show" key="hello">hello</div>
+            <div v-else key="bye">bye world</div> -->
         </transition>
         <button @click="handleClick">toggle</button>
     </div>
 
-    <script src="../js/vue.js"></script>
     <script>
+        Vue.component('child', {
+            template:'<div>child</div>'
+        })
+        Vue.component('child-one', {
+            template:'<div>child-one</div>'
+        })
+        
         const app = new Vue({
             el: '#app',
             data: {
                 message: 'hello',
-                show: true
+                show: true,
+                type:'child'
             },
             methods: {
                 handleClick() {
-                    this.show = !this.show
+                    this.type = this.type ==='child'?'child-one':'child';
                 }
             }
         });

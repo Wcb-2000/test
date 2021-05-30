@@ -1,0 +1,76 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-05-30 13:25:40
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-05-30 13:37:34
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        /* .v-enter,
+        .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: opacity 1s;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <fade :show="show">
+            <div>hello</div>
+        </fade>
+        <fade :show="show">
+           <h2>world</h2>
+        </fade>
+        <button @click="handleBtnClick">toggle</button>
+    </div>
+
+    <script>
+        Vue.component('fade', {
+            props: ['show'],
+            template: `
+            <transition @before-enter="handleBeforeEnter"
+                        @enter="handleEnter">
+                <slot v-if="show"></slot>
+            </transition>
+            `,
+            methods: {
+                handleBeforeEnter(el){
+                     el.style.color = 'red'
+                },
+                handleEnter(el,done){
+                    setTimeout(()=>{
+                        el.style.color = 'blue'
+                        done()
+                    },2000)
+                }
+            }
+        })
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hello',
+                show: true
+            },
+            methods: {
+                handleBtnClick() {
+                    this.show = !this.show
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
