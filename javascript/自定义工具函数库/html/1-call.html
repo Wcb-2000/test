@@ -1,0 +1,36 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-06 15:02:13
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-06 15:16:14
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../js/call.js"></script>
+</head>
+<body>
+  <script>
+    //声明一个函数
+    function add(a,b){
+      console.log(this);
+      return a + b + this.c;
+    }
+    //声明一个对象
+    let obj = {
+      c:521
+    };
+    //添加全局属性
+    window.c=1234;
+
+    //执行call函数
+    console.log(call(add, obj, 10 ,20));
+    console.log(call(add, null, 10 ,20));  // 参数为空时 ，默认从全局寻找
+  </script>
+</body>
+</html>

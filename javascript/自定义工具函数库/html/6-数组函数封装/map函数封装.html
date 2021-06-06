@@ -1,0 +1,31 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-06 17:48:36
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-06 18:01:28
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Array/map.js"></script>
+</head>
+<body>
+    <script>
+      // 声明一个数组
+      const arr = [1,2,3,4,5,6]
+
+      const result = map(arr, (item, index) => {
+        console.log(index); //数组下标
+        return item * 10;
+      });
+
+      console.log(result); //新数组
+    
+    </script>
+</body>
+</html>
