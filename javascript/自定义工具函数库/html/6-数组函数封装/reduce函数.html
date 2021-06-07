@@ -1,0 +1,37 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-07 20:12:23
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-07 20:54:05
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Array/arrMathod.js"></script>
+</head>
+<body>
+  <script>
+    //reduce(callback, 初始值)  以上一次执行完的值 作为下一次的值继续使用
+    const arr = [1,2,3,4,5];
+
+    //正常使用情况
+    // let result = arr.reduce(function(res, value){
+    //   return res + value;
+    // }, 0);
+
+    // console.log(result);
+
+    // 封装后使用情况 reduce() 调用
+    let result = reduce(arr, function(res, value){
+      return res + value;
+    }, 0);
+    
+    console.log(result);
+  </script>
+</body>
+</html>

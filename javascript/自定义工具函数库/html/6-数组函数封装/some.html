@@ -1,0 +1,29 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-07 21:19:47
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-07 21:25:13
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>some</title>
+  <script src="../../js/Array/arrMathod.js"></script>
+</head>
+<body>
+  <script>
+    // some() 如果数组中至少有一个元素满足 则返回true, 反之为false
+    let arr = [1,2,3,4096,5,1024];
+    //正常方法
+    // const result = arr.some(item => item > 1);
+    // console.log(result);
+
+    const result = some(arr, item => item >1);
+    console.log(result);
+  </script>
+</body>
+</html>

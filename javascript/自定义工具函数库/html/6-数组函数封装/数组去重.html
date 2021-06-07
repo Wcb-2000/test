@@ -1,0 +1,37 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-07 21:33:12
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-07 22:22:12
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Array/unique.js"></script>
+</head>
+<body>
+  <script>
+    /*
+    方法一: 利用forEach() 和indexOf()
+      说明: 双重遍历,效率差
+
+    方法二: forEach() + 对象容器
+      说明: 只需要遍历一次, 效率高
+
+    方法三: 利用ES6语法  from + Set 或... + Set
+      说明: 编码简洁
+    */
+
+    const arr = [1,2,3,1,4,5,3]
+
+    console.log(unique1(arr));
+    console.log(unique2(arr));
+    console.log(unique3(arr));
+  </script>
+</body>
+</html>

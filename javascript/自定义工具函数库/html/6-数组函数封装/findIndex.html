@@ -1,0 +1,33 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-07 21:13:19
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-07 21:15:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Array/arrMathod.js"></script>
+</head>
+<body>
+<script>
+  //find() 返回数组中满足提供测试函数的第一个元素的索引,否则返回undefined
+
+  let arr = [1,2,3,4096,5,1024];
+  
+  //正常方法
+  // const result = arr.findIndex(item => item>1000);
+  // console.log(result);
+
+  // // 封装
+  const result = findIndex(arr, (item, index) => item>1000);
+  console.log(result);
+</script>
+  
+</body>
+</html>

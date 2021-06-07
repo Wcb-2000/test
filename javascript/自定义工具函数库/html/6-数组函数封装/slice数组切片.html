@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-07 22:22:51
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-07 22:43:55
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Array/slice.js"></script>
+</head>
+<body>
+  <script>
+    // slice(开始下标,截取位置下标+1) 截取数组片段 返回新数组
+    let arr = [1,2,3,4,5,6,7,8];
+    // let result = arr.slice(1,4);  //[2,3,4]
+    // console.log(result);
+
+    const result = slice(arr, 1, 5);
+    console.log(result);
+    
+    const result = slice(arr);
+    console.log(result);
+
+    //判断end 
+    const result = slice(arr, 1, 0);
+    console.log(result);
+  </script>
+</body>
+</html>
