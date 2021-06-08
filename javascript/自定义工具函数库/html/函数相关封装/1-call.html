@@ -1,8 +1,8 @@
 <!--
  * @Author: 吴楚标
- * @Date: 2021-06-06 15:24:07
+ * @Date: 2021-06-06 15:02:13
  * @LastEditors: 吴楚标
- * @LastEditTime: 2021-06-06 15:36:32
+ * @LastEditTime: 2021-06-08 12:05:25
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="../js/apply.js"></script>
+  <script src="../../js/Function/call.js"></script>
 </head>
 <body>
   <script>
@@ -29,8 +29,8 @@
     window.c=1234;
 
     //执行call函数
-    console.log(apply(add, obj, [10 ,20]));
-    console.log(apply(add, null, [10 ,20]));  // 参数为空时 ，默认从全局寻找
+    console.log(call(add, obj, 10 ,20));
+    console.log(call(add, null, 10 ,20));  // 参数为空时 ，默认从全局寻找
   </script>
 </body>
 </html>
