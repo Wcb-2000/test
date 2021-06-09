@@ -1,0 +1,89 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 11:19:58
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 16:32:30
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深拷贝</title>
+  <script src="../../js/Object/clone.js"></script>
+</head>
+
+<body>
+  <script>
+    // 深拷贝：新数据修改 不影响原数据
+    /*
+      方法一：大众乞丐版（JSON转换）
+        问题：1.函数属性会丢失； 2.循环引用出错
+
+      方法二： 面试基础版（递归）
+        解决问题1：函数属性还没丢失
+
+      方法三： 面试加强版
+        解决问题2： 循环引用正常
+
+      方法四： 面试加强版2（优化遍历性能）
+        数组：while|for|forEach() 优于 for-in|keys()&forEach
+        对象：for-in与keys()&forEach()差不多
+    */
+
+    const obj = {
+      a: 1,
+      b: ['e', 'f', 'g'],
+      c: {
+        h: 20
+      },
+      // JSON不能克隆函数，会丢失
+      d: function () {}
+    };
+
+    //克隆前 循环引用   报错；克隆后即正常情况引用没问题
+    // obj.b.push(obj.c);
+    // obj.c.j = obj.b;
+
+    // 方法一 JSON拷贝
+    const result1 = deepClone1(obj);
+
+    // 修改数据
+    result1.c.h = 100;
+    console.log(obj);
+    console.log(result1);
+
+    // 方法二 递归拷贝 (解决函数拷贝)
+    const result2 = deepClone2(obj);
+
+    result2.c.h = 100;
+    console.log(obj);
+    console.log(result2);
+
+    //  方法三 解决循环引用问题
+
+    obj.b.push(obj.c); //循环引用
+    obj.c.j = obj.b;
+
+    const result3 = deepClone3(obj);
+
+    result3.c.h = 100;
+    console.log(obj);
+    console.log(result3);
+
+    //  方法四  加强版
+    obj.b.push(obj.c); //循环引用
+    obj.c.j = obj.b;
+
+    const result4 = deepClone3(obj);
+
+    result4.c.h = 100;
+    console.log(obj);
+    console.log(result4);
+  </script>
+</body>
+
+</html>

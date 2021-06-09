@@ -1,0 +1,40 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 10:14:46
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 11:06:28
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../js/Object/clone.js"></script>
+</head>
+<body>
+  <script>
+    // 浅拷贝： 只复制对象属性或数组元素本身，只引用地址，既多个对象指向同个地址，修改值其他对象也会受影响
+    // 方法一： ES6 扩展运算符
+    const obj = {
+      x: 'abc',
+      y: {m: 1}
+    };
+
+    const result1 = clone1(obj);
+    const result2 = clone2(obj);
+
+    // 修改新数据中某个引用类型的值
+    result1.y.m = 2;
+
+    console.log(obj);
+
+    console.log(result1);
+
+    // 方法二： ES5实现
+    console.log(result2);
+  </script>
+</body>
+</html>

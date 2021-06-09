@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 09:47:40
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 10:04:13
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象合并</title>
+  <script src="../../js/Object/mergeObject.js"></script>
+</head>
+<body>
+  <script>
+    // 将两个对象属性合并,输出新数组，不改变原数组
+    
+    const object = {
+      a: [{ x:2 }, { y:4 }],
+      b: 1
+    }
+
+    const other = {
+      a: { Z: 3},
+      b: [2, 3],
+      c: 'foo'
+    }
+
+    console.log(mergeObject(object, other));
+  </script>
+</body>
+</html>

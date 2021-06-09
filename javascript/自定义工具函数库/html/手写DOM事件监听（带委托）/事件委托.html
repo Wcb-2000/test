@@ -1,0 +1,34 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 17:13:38
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 17:41:32
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件委托</title>
+<script src="../../js/event-bind/event-bind.js"></script>
+</head>
+<body>
+  <ul id="items">
+    <li>AAA</li>
+    <li>BBB</li>
+    <li>CCC</li>
+    <li>DDD</li>
+    <div>EEE</div>
+  </ul>
+  <script>
+    
+    // 调用函数绑定事件
+    addEventListener('#items', 'click', function(e){
+      // 输出标签内容
+      console.log(this.innerHTML);
+    }, 'li');
+  </script>
+</body>
+</html>

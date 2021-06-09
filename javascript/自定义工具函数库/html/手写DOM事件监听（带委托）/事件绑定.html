@@ -1,0 +1,61 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 17:01:09
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 17:12:58
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件绑定</title>
+  <style>
+    #out{
+      width: 200px;
+      height: 200px;
+      background: #89c;
+      position: relative;
+      border-radius: 100px;
+    }
+    #inner{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      background: chartreuse;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="out">
+    <div id="inner"></div>
+  </div>
+  <script>
+    // 获取元素 
+    let outer = document.querySelector('#out');
+    let inner = document.querySelector('#inner');
+    
+    //  捕获和冒泡  
+    outer.addEventListener('click',function(){
+      console.log('捕获 outer');
+    }, true);
+
+    inner.addEventListener('click',function(){
+      console.log('捕获 inner');
+    }, true);
+
+    outer.addEventListener('click',function(){
+      console.log('冒泡 outer');
+    });
+
+    inner.addEventListener('click',function(){
+      console.log('冒泡 inner');
+    });
+  </script>
+</body>
+</html>

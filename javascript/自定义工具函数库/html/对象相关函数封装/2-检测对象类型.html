@@ -1,0 +1,42 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 09:28:11
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 09:46:08
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>检查对象类型</title>
+  <script src="../../js/Object/myInstanceOf.js"></script>
+</head>
+<body>
+  <script>
+    //myInstanceOF(obj, Type) 类似 instanceof
+    // 判断obj是否是Type类型的实例
+    // 实现，Type的原型对象是否是obj的原型链上的某个对象，是返回true，不是返回false
+    // 声明一个构造函数
+    function Person(){}
+
+    let p = new Person;
+
+    //检测
+    // console.log(p instanceof Person);  //true
+
+    console.log(myInstanceOf(p, Person)); //true
+    // Object 的显示原型都在p的原型链上 
+    console.log(myInstanceOf(p, Object)); // true
+
+    console.log(myInstanceOf(Person, object)); // true
+
+    console.log(myInstanceOf(Person, Function)); // true
+
+    console.log(myInstanceOf(p, Function)); // false p是由Person的原型对象创建
+
+  </script>
+</body>
+</html>

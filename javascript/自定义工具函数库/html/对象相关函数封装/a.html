@@ -1,0 +1,35 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-09 12:20:38
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-09 12:21:54
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const nums = [1,2,3,4,5,6,7,8];
+    const target = 9;
+
+    var twoSum = function (nums, target) {
+      const myMap = new Map();
+      for (let i = 0; i < nums.length; i++) {
+        if (myMap.has(target - nums[i])) {
+          return [myMap.get(target - nums[i]), i];
+        }
+        myMap.set(nums[i], i);
+      }
+    };
+  </script>
+</body>
+
+</html>
