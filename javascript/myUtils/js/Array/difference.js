@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-08 11:13:18
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-08 11:20:50
+ * LastEditTime: 2021-06-10 22:25:32
  * Description: 
 */
-function difference(arr1, arr2=[]){
+export function difference(arr1, arr2=[]){
   //补充条件
   if(arr1.length === 0){
     return [];

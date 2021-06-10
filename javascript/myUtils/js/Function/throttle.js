@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-06 16:03:20
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-06 16:42:15
+ * LastEditTime: 2021-06-10 22:41:30
  * Description: 
 */
-function throttle(callback, wait){
+export function throttle(callback, wait){
     //定义开始时间
     let start = 0;
     //返回结果是一个函数

@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-07 21:43:23
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-07 22:02:52
+ * LastEditTime: 2021-06-10 22:29:30
  * Description: 
 */
-function unique1(arr){
+export function unique1(arr){
   //声明空数组
   const result = [];
   arr.forEach(item => {
@@ -17,7 +17,7 @@ function unique1(arr){
   return result;
 }
 
-function unique2(arr){
+export function unique2(arr){
   //声明空数组
   const result = [];
   //声明空对象
@@ -32,7 +32,7 @@ function unique2(arr){
   return result;
 }
 
-function unique3(arr){
+export function unique3(arr){
    //Set() 中的元素唯一
    //let set = new Set(arr)
    //将set展开创建为数组

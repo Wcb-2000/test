@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 21:03:08
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 22:06:57
+ * LastEditTime: 2021-06-10 22:35:20
  * Description: 
 */
-const eventBus = {
+export const eventBus = {
   // 保存类型与回调的容器
   callbacks:{}
 }

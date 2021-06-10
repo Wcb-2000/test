@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-06 15:23:53
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-06 15:36:04
+ * LastEditTime: 2021-06-10 22:37:47
  * Description: 
 */
-  function apply(Fn, obj, args){
+  export function apply(Fn, obj, args){
     //判断
     if(obj === undefined || obj === null){
       obj = globalThis;

@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 16:41:08
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 16:56:05
+ * LastEditTime: 2021-06-10 22:45:58
  * Description: 
 */
-function reverseString(str){
+export function reverseString(str){
   // 将字符串转为数组
   // let arr = str.split('');
   let arr = [...str];
@@ -16,11 +16,11 @@ function reverseString(str){
   return result;
 }
 
-function palindrome(str){
+export function palindrome(str){
   // 反转是否相等
   return reverseString(str) === str;
 }
 
-function truncate(str, size){
+export function truncate(str, size){
    return str.slice(0,size) + '...';
 }

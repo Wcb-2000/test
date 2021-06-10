@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-07 20:45:49
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-07 21:30:01
+ * LastEditTime: 2021-06-10 22:22:16
  * Description: 
 */
 
@@ -11,7 +11,7 @@
  * @param {Array} arr 
  * @param {Function} callback 
  */
-function map(arr, callback) {
+export function map(arr, callback) {
   //声明一个空数组
   let result = [];
 
@@ -30,7 +30,7 @@ function map(arr, callback) {
  * @param {*} initValue
  * 
 */
-function reduce(arr, callback, initValue){
+export function reduce(arr, callback, initValue){
   // 声明变量
   let result = initValue;
   //执行回调
@@ -47,7 +47,7 @@ function reduce(arr, callback, initValue){
  * @param {Array} arr 
  * @param {Function} callback 
  */
-function filter(arr, callback){
+export function filter(arr, callback){
   //声明空数组
   let result = [];
   //遍历数组
@@ -68,7 +68,7 @@ function filter(arr, callback){
  * @param {Function} callback 
  * 
  */
-function find(arr, callback){
+export function find(arr, callback){
   for(let i=0;i<arr.length;i++){
     //遍历数组
     let res = callback(arr[i], i);
@@ -87,7 +87,7 @@ function find(arr, callback){
  * @param {Function} callback 
  * 
  */
-function findIndex(arr, callback){
+export function findIndex(arr, callback){
   for(let i=0;i<arr.length;i++){
     //遍历数组
     let res = callback(arr[i], i);
@@ -107,7 +107,7 @@ function findIndex(arr, callback){
  * @param {Function} callback 
  * @returns 
  */
-function every(arr, callback){
+export function every(arr, callback){
   //遍历
   for(let i = 0; i<arr.length;i++){
     //执行回调,如果有不满足 则直接返回false  反之为true
@@ -119,7 +119,7 @@ function every(arr, callback){
   return true;
 }
 
-function some(arr, callback){
+export function some(arr, callback){
   //遍历
   for(let i = 0; i<arr.length;i++){
     //执行回调,如果有满足 则直接返回true 反之返回false

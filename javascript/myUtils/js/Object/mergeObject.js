@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 09:48:18
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 10:14:02
+ * LastEditTime: 2021-06-10 22:43:39
  * Description: 
 */
-function mergeObject(...objs){
+export function mergeObject(...objs){
   // 声明空对象
   const result = {};
   // 遍历所有的参数对象

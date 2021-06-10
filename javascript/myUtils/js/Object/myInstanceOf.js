@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 09:28:41
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 09:43:29
+ * LastEditTime: 2021-06-10 22:44:09
  * Description: 
 */
-function myInstanceOf(obj, Fn){
+export function myInstanceOf(obj, Fn){
   // 获取函数的显示原型
   let prototype = Fn.prototype;
   // 获取obj的隐式原型对象

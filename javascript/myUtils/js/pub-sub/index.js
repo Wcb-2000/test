@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 22:13:47
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 23:14:09
+ * LastEditTime: 2021-06-10 22:45:25
  * Description: 
 */
-const PubSub = {
+export const PubSub = {
   // 订阅唯一id
   id:1,
   // 频道与回调保存容器

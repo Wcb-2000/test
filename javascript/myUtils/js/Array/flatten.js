@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-08 10:11:19
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-08 10:38:36
+ * LastEditTime: 2021-06-10 22:26:29
  * Description:
  */
 /**
@@ -10,7 +10,7 @@
  * @param {Array} arr 
  * @returns 
  */
-function flatten1(arr) {
+export function flatten1(arr) {
   let result = [];
   //遍历
   arr.forEach((item) => {
@@ -28,7 +28,7 @@ function flatten1(arr) {
  * 
  * @param {Array} arr 
  */
-function flatten2(arr){
+export function flatten2(arr){
   //声明数组
   let result = [...arr];
   // 循环判断

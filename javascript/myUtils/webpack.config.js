@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-10 20:48:22
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-10 21:10:58
+ * LastEditTime: 2021-06-10 21:23:35
  * Description: 
 */
 // 引入 nodeJS 内置模块 path
@@ -18,7 +18,7 @@ module.exports = {
     // 打包文件夹
     path: path.resolve(__dirname, 'dist'),
     // 打包文件
-    filename: 'atguigu-utils.js',
+    filename: 'my-utils.js',
     // 向外暴露的对象的名称
     library: 'myUtils',
     // 打包生成库可以通过esm/commonjs/reqirejs的语法引入

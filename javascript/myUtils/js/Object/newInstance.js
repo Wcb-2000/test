@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-08 12:08:41
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-08 12:29:36
+ * LastEditTime: 2021-06-10 22:44:42
  * Description: 
 */
-function newInstance(Fn, ...args){
+export function newInstance(Fn, ...args){
   // 创建新对象
   const obj = {};
   // 修改函数内部指针指向新对象 并执行

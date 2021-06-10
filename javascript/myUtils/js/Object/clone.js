@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 10:15:08
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 16:34:07
+ * LastEditTime: 2021-06-10 22:42:22
  * Description:
  */
-function clone1(target) {
+export function clone1(target) {
   // 类型判断 {} [] null
   if (typeof target === "object" && target !== null) {
     // 判断是否为数组
@@ -19,7 +19,7 @@ function clone1(target) {
   }
 }
 
-function clone2(target) {
+export function clone2(target) {
   // 判断
   if (typeof target === "object" && target !== null) {
     // 创建容器
@@ -38,7 +38,7 @@ function clone2(target) {
   }
 }
 
-function deepClone1(target) {
+export function deepClone1(target) {
   // 通过数据创建 JSON 格式字符串
   let str = JSON.stringify(target);
   // 将JSON 字符串创建为JS数据
@@ -46,7 +46,7 @@ function deepClone1(target) {
   return data;
 }
 
-function deepClone2(target) {
+export function deepClone2(target) {
   // 判断
   if (typeof target === "object" && target !== null) {
     // 创建容器
@@ -65,7 +65,7 @@ function deepClone2(target) {
   }
 }
 
-function deepClone3(target, map = new Map()) {
+export function deepClone3(target, map = new Map()) {
   // 判断
   if (typeof target === "object" && target !== null) {
     // 克隆数据之前，判断数据是否克隆过
@@ -91,7 +91,7 @@ function deepClone3(target, map = new Map()) {
   }
 }
 
-function deepClone4(target, map = new Map()) {
+export function deepClone4(target, map = new Map()) {
   // 判断
   if (typeof target === "object" && target !== null) {
     // 克隆数据之前，判断数据是否克隆过

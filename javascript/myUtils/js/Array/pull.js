@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-08 11:26:13
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-08 11:45:08
+ * LastEditTime: 2021-06-10 22:27:33
  * Description: 
 */
 /**
@@ -11,7 +11,7 @@
  * @param  {*} args 
  * @returns 
  */
-function pull(arr, ...args){
+export function pull(arr, ...args){
   //声明空数组
   let result = [];
   // 遍历arr
@@ -30,6 +30,6 @@ function pull(arr, ...args){
 }
 
 
-function pullAll(arr, value){
+export function pullAll(arr, value){
   return pull(arr, ...value);
 }

@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-10 16:43:52
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-10 17:57:24
+ * LastEditTime: 2021-06-10 22:30:30
  * Description:
  */
-function axios({ method, url, params, data }) {
+export function axios({ method, url, params, data }) {
   // 方法转换大写
   method = method.toUpperCase();
   // 返回值

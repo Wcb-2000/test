@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-07 22:24:09
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-07 22:42:59
+ * LastEditTime: 2021-06-10 22:28:44
  * Description: 
 */
-function slice(arr, begin, end){
+export function slice(arr, begin, end){
   //若arr数组长度为 0
   if(arr.length === 0){
     return [];

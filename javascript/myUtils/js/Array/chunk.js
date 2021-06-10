@@ -2,12 +2,12 @@
  * Author: 吴楚标
  * Date: 2021-06-08 10:47:50
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-08 11:09:44
+ * LastEditTime: 2021-06-10 22:15:31
  * Description: 
 */
 
 //默认长度为1
-function chunk(arr, size = 1){
+export function chunk(arr, size = 1){
   // 声明两个变量
   let result = [];
   let tmp = [];

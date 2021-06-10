@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-06 14:49:34
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-06 15:00:10
+ * LastEditTime: 2021-06-10 22:39:48
  * Description:
 */
-function call(Fn, obj, ...args){
+export function call(Fn, obj, ...args){
   if(obj === undefined || obj === null){
     obj = globalThis; //指向全局对象
   }

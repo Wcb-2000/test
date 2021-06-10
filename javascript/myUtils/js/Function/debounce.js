@@ -5,7 +5,7 @@
  * LastEditTime: 2021-06-06 17:40:44
  * Description: 
 */
-function debounce(callback, time){
+export function debounce(callback, time){
   //定时器变量
   let timeId = null;
 

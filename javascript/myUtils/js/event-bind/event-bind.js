@@ -2,10 +2,10 @@
  * Author: 吴楚标
  * Date: 2021-06-09 17:24:54
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-09 17:52:57
+ * LastEditTime: 2021-06-10 22:31:06
  * Description:
  */
-function addEventListener(el, type, fn, selector) {
+export function addEventListener(el, type, fn, selector) {
   // 判断 el 的类型
   if (typeof el === "string") {
     el = document.querySelector(el);
