@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-11 16:20:18
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-11 16:32:28
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽奖</title>
+  <style>
+    h2{
+      border-bottom: 1px solid rgb(216, 213, 213);
+    }
+    .btn{
+      background-color: blue;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="header">Promise 初体验</h2>
+    <button class="btn btn-primary" id="btn">点击抽奖</button>
+  </div>
+
+  <script>
+    // 生成随机数
+    function rand(m,n){
+      return Math.ceil(Math.random() * (n-m+1)) + m-1;
+    }
+
+    /* 点击按钮，2s后显示是否中将（30%概率）
+          若中奖 弹出 恭喜恭喜，奖品为兰博基尼5元代金券 
+          若未中奖 弹出 再接再厉*/
+
+    // 获取元素对象
+    const btn = document.querySelector('#btn');
+    // 绑定单击响应事件
+    btn.addEventListener('click',function(){
+      setTimeout(() => {
+        let n = rand(1,100);
+       console.log(n);
+        if(n <= 30){
+          alert("恭喜恭喜，奖品为兰博基尼5元代金券 ");
+        }else{
+          alert("再接再厉");
+        }
+      })
+    })
+  </script>
+</body>
+</html>
