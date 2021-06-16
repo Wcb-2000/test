@@ -1,0 +1,39 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-16 10:25:36
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-16 10:51:50
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>封装Promise.resolve,Promise.reject</title>
+  <script src="../js/promise.js"></script>
+</head>
+<body>
+  <script>
+    const p = Promise.resolve('ok');
+    const p3 = Promise.resolve(new Promise((resolve, reject) => {
+      resolve('ok');
+      // reject('err');
+    }))
+    
+    const p2 = Promise.reject('ok');
+    const p4 = Promise.resolve(new Promise((resolve, reject) => {
+      // resolve('ok');
+      reject('err');
+    }))
+
+    console.log(p);
+    console.log(p3);
+    
+    console.log(p2);
+    console.log(p4);
+
+  </script>
+</body>
+</html>

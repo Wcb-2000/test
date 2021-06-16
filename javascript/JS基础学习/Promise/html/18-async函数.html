@@ -1,0 +1,28 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-16 16:25:32
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-16 16:29:15
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async函数</title>
+</head>
+<body>
+  <script>
+    // 功能与then相同
+    async function main(){
+      // 1.如果返回值是一个非Promise类型的数据
+      return 111;
+    }
+
+    let result = main();
+    console.log(result);
+  </script>
+</body>
+</html>
