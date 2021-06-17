@@ -1,0 +1,58 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-06-17 16:34:49
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-06-17 17:09:48
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    Function.prototype.myCall = function(context){
+         // 先判断调用myCall是不是一个函数
+      // 这里的this就是调用myCall的
+      if (typeof this !== 'function') {
+        throw new TypeError("Not a Function")
+      }
+      // 不传参数默认为window
+      context = context || window
+      // 保存this
+      context.fn = this
+      // 保存参数
+      let args = Array.from(arguments).slice(1)   //Array.from 把伪数组对象转为数组
+      // 调用函数
+      let result = context.fn(...args)
+      delete context.fn
+      return result
+    }
+
+    //声明一个函数
+    function add(a, b) {
+      // console.log(this);
+      return a + b + this.c;
+    }
+    //声明一个对象
+    let obj = {
+      c: 521
+    };
+    //添加全局属性
+    window.c = 1234;
+
+    console.log(add.myCall(obj,10,20));
+    //执行call函数
+    // console.log(call(add, obj, 10, 20));
+    // console.log(call(add, null, 10, 20)); // 参数为空时 ，默认从全局寻找
+  </script>
+  
+</body>
+
+</html>
