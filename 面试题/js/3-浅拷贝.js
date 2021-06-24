@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-23 22:19:18
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-23 23:44:19
+ * LastEditTime: 2021-06-24 10:27:07
  * Description: 
 */
 // ES6
@@ -43,3 +43,4 @@ console.log(result1);
 
 const result2 = clone2(obj);
 console.log(result2);
+
