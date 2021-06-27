@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-24 10:27:22
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-25 00:55:19
+ * LastEditTime: 2021-06-27 16:39:45
  * Description: 
 */
 /**
@@ -41,14 +41,14 @@ function deepClone2(obj){
  * 方法三、 引入键值对
  * 解决问题：循环引用
  */
-function deepClone3(obj, map=new Map()){
-  if(typeof obj === 'object' && obj !==null){
+function deepClone3(obj, map = new Map()){
+  if(typeof obj === 'object' && obj !== null){
     let cache = map.get(obj);
     if(cache){
       return cache;
     }
-    const result = Array.isArray(obj)?[]:{};
-    map.set(obj,result);
+    const result = Array.isArray(obj)? []:{};
+    map.set(obj, result);
     for(let key in obj){
       if(obj.hasOwnProperty(key)){
         result[key] = deepClone3(obj[key], map);
