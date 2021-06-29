@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-24 22:43:01
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-24 23:34:35
+ * LastEditTime: 2021-06-29 22:49:11
  * Description: 
 */
 // 方法一，forEach() 双重遍历 效率低
@@ -24,7 +24,7 @@ function unique2(arr){
     if(obj[item] === undefined){
       obj[item] = true;
       result.push(item);
-    }
+     }
   })
   return result;
 }
