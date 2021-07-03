@@ -1,0 +1,67 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-03 19:47:45
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-03 20:03:07
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      height: 100px;
+    }
+
+    #a {
+      background-color: chartreuse;
+      width: 100%;
+    }
+
+    #b {
+      background-color: chocolate;
+      flex: 1;
+    }
+
+    #c {
+      background-color: cornflowerblue;
+      flex:3;
+    }
+
+    #contain {
+      display: flex;
+    }
+
+    #d {
+      background-color: cyan;
+      flex:1;
+    }
+
+    #e {
+      clear: both;
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a">头部</div>
+  <div id="contain">
+    <div id="b">左边</div>
+    <div id="c">中间</div>
+    <div id="d">右边</div>
+  </div>
+  <div id="e">底部</div>
+</body>
+
+</html>
