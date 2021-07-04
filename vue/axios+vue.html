@@ -1,0 +1,51 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-04 15:44:52
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-04 15:52:24
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <input type="button" value="获取笑话" @click="getJoke">
+  <p>{{joke}}</p>
+</div>
+  
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+  <script src="../node_modules/vue/dist/vue.min.js"></script>
+  <script>
+     /*
+    接口1：随机笑话
+    请求地址：https://autumnfish.cn/api/joke
+    请求方法：get
+    请求参数：num（笑话条数，数字）
+    响应内容：随机笑话
+    */
+   var app = new Vue({
+     el:"#app",
+     data:{
+       joke:"很好笑的笑话"
+     },
+     methods: {
+       getJoke:function(){
+         var that = this;
+         axios.get("https://autumnfish.cn/api/joke").then((result) => {
+          //  console.log(result);
+          that.joke = result.data;
+         }).catch((err) => {
+           
+         });
+       }
+     }
+   })
+  </script>
+</body>
+</html>
