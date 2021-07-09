@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-16 23:47:57
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-17 00:16:23
+ * LastEditTime: 2021-07-07 13:32:01
  * Description: 快速排序一
 */
 
@@ -49,3 +49,13 @@
   }
 
   console.log(quickSort(arr));
+  
+function quicksort2(arr){
+  if(!arr.length) return [];
+  let [base, ...newArr] =arr;
+  let left = newArr.filter(e => e<base);
+  let right = newArr.filter(e => e>base);
+  return [...quicksort2(left),base, ...quicksort2(right)];
+}
+
+console.log(quicksort2(arr));

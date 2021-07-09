@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-23 16:16:34
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-23 21:37:01
+ * LastEditTime: 2021-07-09 14:46:45
  * Description: 
 */
 //定义在原型链
@@ -28,7 +28,7 @@ var ex = {
   age: 18,
 }
 person.newCall(ex,10);
-
+ 
 Function.prototype.luckyApply = function(obj){
   if(typeof this !== 'function'){
     throw TypeError('Not a Function');

@@ -1,0 +1,61 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-09 22:56:35
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-09 23:30:10
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // https://i2.hdslb.com/bfs/archive/ca744c191328de7de53c2b88c1e30a8d06b4ad83.jpg@336w_190h_1c.webp
+    
+    function loadImg(src){
+      const p = new Promise((resolve, reject) => {
+        const img = document.createElement('img')
+        img.onload = () => {
+          resolve(img);
+        }
+        img.onerror = () => {
+          const err = new Error(`图片加载失败 ${src}`)
+          reject(err);
+        }
+        img.src = src;
+      })
+      return p;
+    }
+
+// const url = 'https://i2.hdslb.com/bfs/archive/ca744c191328de7de53c2b88c1e30a8d06b4ad83.jpg@336w_190h_1c.webp'
+//     loadImg(url).then(val => {
+//       console.log(val.width);
+//       return val;
+//     }).then(val => {
+//       console.log(val.height);
+//     }).catch(reason => {
+//       console.error(reason);
+//     })
+
+const url1 = 'https://i2.hdslb.com/bfs/archive/ca744c191328de7de53c2b88c1e30a8d06b4ad83.jpg@336w_190h_1c.webp';
+const url2 = 'https://img-blog.csdnimg.cn/2021011818100210.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMjc3NjU0,size_16,color_FFFFFF,t_70#pic_center';
+    
+loadImg(url1).then(val => {
+  console.log(val.width);
+  return val;
+}).then(val => {
+  console.log(val.height);
+  return loadImg(url2);
+}).then(val => {
+  console.log(val.width);
+}).catch(err => {
+  console.log(err);
+})
+  </script>
+</body>
+</html>
