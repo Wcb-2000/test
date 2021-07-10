@@ -1,0 +1,37 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-10 22:53:27
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-10 22:56:56
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="list">
+
+  </div>
+  <script>
+    const list = document.getElementById('list');
+
+    // 创建个文档片段，此时还没有插入到DOM中
+    let frag = document.createDocumentFragment();
+
+    // 执行插入到文档片段
+    for(let i =0;i<10;i++){
+      const li = document.createElement('li');
+      li.innerHTML = `这是第 ${i} 个li`;
+      frag.appendChild(li);
+    }
+    
+    // 都完成，再插入到DOM中
+    list.appendChild(frag);
+  </script>
+</body>
+</html>
