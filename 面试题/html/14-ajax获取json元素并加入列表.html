@@ -1,0 +1,89 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-11 18:34:39
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-12 01:35:06
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="list">
+    <h1 class="h1">插件列表</h1>
+    <div class="list_a">
+      <div class="list_b">
+        <div class="btn">
+          <button id="btn1">增加</button>
+          <button id="btn2">删除</button>
+        </div>
+        <div id="lists"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./ajax.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      background-color: #eff3f9;
+    }
+
+    .h1 {
+      position: fixed;
+      top: 0;
+      background-color: #363b4d;
+      color: #ffffff;
+      width: 100%;
+      line-height: 60px;
+      font-size: 24px;
+      padding-left: 16px;
+      z-index: 1;
+    }
+    
+    .btn{
+      margin: 76px 16px 0;
+      line-height: 51px;
+      border-bottom: 1px solid #eeeeee;
+      background-color: #ffffff;
+    }
+    .btn button{
+      font-size: 16px;
+      height: 32px;
+      color: #3172f5;
+      border-color: #3172f5;
+      border-radius: 5px;
+      padding: 0 9px;
+      margin-left: 22px;
+    }
+    /* #list_a{
+      
+    } */
+    input{
+      position: absolute;
+      margin-left: 22px;
+      margin-top: 13px;
+    }
+    #lists{
+      /* margin-top: 76px; */
+      padding: 0 16px;
+    }
+    #lists li {
+      background-color: #ffffff;
+      line-height: 38px;
+      border-bottom: 1px solid #eeeeee;
+      list-style-type: none;
+      padding-left: 36px;
+    }
+  </style>
+</body>
+
+</html>

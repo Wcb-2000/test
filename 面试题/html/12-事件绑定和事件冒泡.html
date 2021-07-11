@@ -1,0 +1,79 @@
+<!--
+ * @Author: 吴楚标
+ * @Date: 2021-07-11 15:37:11
+ * @LastEditors: 吴楚标
+ * @LastEditTime: 2021-07-11 17:31:25
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn1">点击按钮</button>
+
+  <div id="div1">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <a href="#">a4</a>
+  </div>
+  
+
+  <script>
+
+    // 事件绑定
+    let btn1 = document.getElementById('btn1');
+    function eventBind(elem, type, fn){
+      elem.addEventListener(type, fn);
+    };
+    eventBind(btn1, 'click', e => {
+      console.log(e.target);   //获取触发的元素
+      e.preventDefault();  // 阻止默认行为，例如当点击链接跳转时，此方法可不跳转
+      alert('clicked');
+    });
+
+    // 事件冒泡
+    let btn2 = document.getElementById('div1');
+    eventBind(btn2, 'click', e=> {
+      e.preventDefault();
+      // e.stopPropagation(); //阻止冒泡
+      console.log(e.target.innerHTML);
+    })
+
+    let body = document.body;
+    eventBind(body, 'click', e=> {
+      console.log(btn1.innerHTML);
+    })
+
+  //  事件代理
+    function bindEvent(elem, type, selector, fn){
+      if(fn == null){
+        fn = selector;
+        selector = null;
+      }
+
+      elem.addEventListener(type, event => {
+        const target = event.target;
+        if(selector){
+          // 代理绑定
+          if(target.matches(selector)){ // matches判断是否是触发元素
+            fn.call(target, event);
+          }
+        }else{
+          // 普通绑定
+          fn.call(target, event)
+        }
+      })
+    }
+    
+    bindEvent(btn2, 'click', 'a', e => {
+      console.log(e.target.innerHTML);
+    })
+  </script>
+</body>
+</html>
