@@ -2,12 +2,12 @@
  * Author: 吴楚标
  * Date: 2021-07-11 18:53:35
  * LastEditors: 吴楚标
- * LastEditTime: 2021-07-12 02:16:16
+ * LastEditTime: 2021-07-12 16:32:31
  * Description: 
 */
 const xhr = new XMLHttpRequest();
 let response = null;
-xhr.open('GET','./data.json',false);
+xhr.open('GET','./data.json',true);
 xhr.onreadystatechange = function(){
   if(xhr.readyState === 4){
     if(xhr.status === 200){
