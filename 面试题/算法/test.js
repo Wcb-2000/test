@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-16 23:32:54
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-28 17:33:52
+ * LastEditTime: 2021-07-18 14:29:32
  * Description: 
 */
 let arr = [1,2,3,4];
@@ -32,3 +32,18 @@ console.log(test);
 
 let ccc = arrs.slice(1,3);
 console.log(ccc);
+
+let a = arr.splice(2,1);
+console.log(a);
+
+
+let as = [1,2,3,4,5,6,7,8];
+//  as.filter(item => console.log(item%3 ===1));
+let c =  as.findIndex(item => item === 2);
+console.log(c);
+let d = as.every(item => item>1);
+console.log(d);
+// console.log(result);
+
+let shu = Math.trunc(12.12);
+console.log(shu);
