@@ -2,29 +2,20 @@
  * Author: 吴楚标
  * Date: 2021-07-17 19:36:47
  * LastEditors: 吴楚标
- * LastEditTime: 2021-07-18 18:07:52
- * Description: 
-*/
-import Scanner from './Scanner.js'
+ * LastEditTime: 2021-07-19 21:48:17
+ * Description:
+ */
+import parseTemplateToTokens from "./parseTemplateToTokens";
+import renderTemplate from "./renderTemplate.js";
 
 // 全局提供templateEngine
 window.templateEngine = {
   // 渲染方法
-  render(templateStr, data){
-    // 实例化一个扫描器，构造时候提供一个参数，这个参数就是模板字符串
-    // 也就是说这个扫描器就是针对这个模板字符串工作的
-    var scanner = new Scanner(templateStr);
+  render(templateStr, data) {
+    var tokens = parseTemplateToTokens(templateStr);
+    // 调用renderTemplate函数，让tokens数组变为dom字符串
+    var domStr = renderTemplate(tokens, data);
 
-    var word;
-    // 当scanner没有到头
-    while(!scanner.eos()){
-      word = scanner.scanUtil('{{');
-      console.log(word);
-      scanner.scan('{{')
-      
-      word = scanner.scanUtil('}}');
-      console.log(word);
-      scanner.scan('}}');
-    }
+    return domStr;
   }
 };
