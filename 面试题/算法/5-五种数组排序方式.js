@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-24 23:42:04
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-25 12:15:49
+ * LastEditTime: 2021-07-20 23:03:41
  * Description: 
 */
 // 方法一： sort()排序  
@@ -14,7 +14,7 @@ function func(a,b){
 }
 // console.log(arr.sort(func));
 
-// 方法二 选择排序
+// 方法二 选择排序    O(n^2)
 // 选择最小（最大）放在开头，剩下的再选择
 function sort2(arr){
   for(var i =0;i<arr.length;i++){
@@ -30,7 +30,7 @@ function sort2(arr){
 }
 // console.log(sort2(arr));
 
-// 方法三：冒泡排序
+// 方法三：冒泡排序     O(n^2)
 function sort3(arr){
   for(var i=0;i<arr.length-1;i++){
     for(var j=0;j<arr.length-1-i;j++){
@@ -45,7 +45,7 @@ function sort3(arr){
 }
 // console.log(sort3(arr));
 
-// 方法四：插入排序
+// 方法四：插入排序     O(n^2)
 function sort4(arr) {
   var preIndex, current;
   for (var i = 1; i < arr.length; i++) {
@@ -62,7 +62,7 @@ function sort4(arr) {
 }
 // console.log(sort4(arr));
 
-// 方法五：快速排序
+// 方法五：快速排序     O(nlogn)
 function sort5(arr){
   let base_num = arr[0];
   let left_num = [];

@@ -2,8 +2,8 @@
  * Author: 吴楚标
  * Date: 2021-07-19 14:18:37
  * LastEditors: 吴楚标
- * LastEditTime: 2021-07-19 18:23:21
- * Description:
+ * LastEditTime: 2021-07-19 22:13:11
+ * Description:扫描文本转为tokens数组
  */
 import Scanner from "./Scanner.js";
 import nestTokens from "./nestTokens.js";

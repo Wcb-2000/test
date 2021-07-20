@@ -2,7 +2,7 @@
  * Author: 吴楚标
  * Date: 2021-06-23 10:29:25
  * LastEditors: 吴楚标
- * LastEditTime: 2021-06-23 11:12:12
+ * LastEditTime: 2021-07-20 23:20:30
  * Description: 
 */
 // 两数之和
@@ -28,3 +28,18 @@ var twoSum = function(nums, target){
 }
 
 console.log(twoSum([2,3,11,7], 9));
+
+function sum(arr, target){
+  const map = new Map();
+  for(let i =0;i<arr.length;i++){
+    let cha = target - arr[i];
+    if(map.has(cha)){
+      return [map.get(cha),i]
+    }else{
+      map.set(arr[i], i)
+    }
+  }
+  return [];
+}
+
+console.log(sum([2,3,11,7], 9));
